@@ -1,0 +1,34 @@
+﻿VARIABLES
+	Entier A
+	Entier B
+	Entier C
+
+DEBUT PROGRAMME
+	Ecrire "Veuillez saisir le nombre A : "
+	Lire A
+	Ecrire "Veuillez saisir le nombre B : "
+	Lire B
+	Ecrire "Veuillez saisir le nombre C : "
+	Lire C
+	Si A < B
+		Si B < C
+			Ecrire C, " > ", B, " > ", A
+		Sinon
+			Si A < C
+				Ecrire B, " ≥ ", C, " > ", A
+			Sinon
+				Ecrire B, " > ", A, " ≥ ", C
+			Fin Si
+		Fin Si
+	Sinon
+		Si B < C
+			Si A < C
+				Ecrire C, " > ", A, " ≥ ", B
+			Sinon
+				Ecrire A, " ≥ ", C, " > ", B 
+			Fin Si
+		Sinon
+			Ecrire A, " ≥ ", B, " ≥ ", C
+		Fin Si
+	Fin Si
+FIN PROGRAMME

@@ -1,0 +1,16 @@
+﻿VARIABLES
+	Entier A
+	Entier B
+	Entier tampon
+
+DEBUT PROGRAMME
+	Ecrire "Veuillez entrer un nombre A entier : "
+	Lire A
+	Ecrire "Veuillez entrer un nombre B entier : "
+	Lire B
+	Ecrire "La valeur de A est : ", A, " et celle de B est : ", B
+	tampon <- A
+	A <- B
+	B <- tampon
+	Ecrire "La valeur de A est maintenant : ", A, " et celle de B est : ", B
+FIN PROGRAMME

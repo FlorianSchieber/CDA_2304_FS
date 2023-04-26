@@ -1,0 +1,38 @@
+﻿VARIABLES
+	Booléen ilFaitBeau
+	Booléen bicycletteFontionne
+	Booléen reparationsImmediates
+	Booléen gotAuSalon
+	Booléen livreDisponible
+
+DEBUT PROGRAMME
+	Ecrire "J'ai envie de faire un tour en bicyclette. Fait-il beau ?"
+	Si ilFaitBeau
+		Ecrire "Ma bicyclette est-elle en état de fonctionnement ?"
+		Si bicycletteFontionne
+			Ecrire "Je fais un tour de bicyclette. The End !"
+		Sinon
+			Ecrire "Je vais au garage."
+			Ecrire "Les réparations sont-elles immédiates ?"
+			Si reparationsImmediates
+				Ecrire "Je fais un tour de bicyclette. The End !"
+			Sinon
+				Ecrire "Tant pis, je vais à pied jusqu’à l’étang pour cueillir les joncs. The End !"
+			Fin Si
+		Fin Si
+	Sinon
+		Ecrire "Tant pis, je vais consacrer ma journée à la lecture."
+		Ecrire "Le 1er tome de GoT est-il dans la bibliothèque du salon ?"
+		Si gotAuSalon
+			Ecrire "Je relis le 1er tome de GoT. The End !"
+		Sinon
+			Ecrire "Je vais à la bibliothèqe municipale"
+			Ecrire "Le livre est-il disponible ?"
+			Si livreDisponible
+				Ecrire "Je rentre à la maison et je lis le 1er tome de GoT. The End !"
+			Sinon
+				Ecrire "J'emprunte un roman policier"
+				Ecrire "Je rentre à la maison et je lis ce livre. The End !"
+		Fin Si
+	Fin Si
+FIN PROGRAMME
