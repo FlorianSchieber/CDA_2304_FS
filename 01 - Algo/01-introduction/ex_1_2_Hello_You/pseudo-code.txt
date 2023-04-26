@@ -1,0 +1,8 @@
+﻿VARIABLES
+	Chaîne prenom
+
+DEBUT PROGRAMME
+	Ecrire "Bonjour, veuillez saisir votre prénom : "
+	Lire prenom
+	Ecrire "Bonjour ", prenom
+FIN PROGRAMME
