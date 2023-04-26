@@ -1,19 +1,22 @@
 ﻿VARIABLES
-	Booléen ilFaitBeau
-	Booléen bicycletteFontionne
-	Booléen reparationsImmediates
-	Booléen gotAuSalon
-	Booléen livreDisponible
+	Booléen : ilFaitBeau
+	Booléen : bicycletteFontionne
+	Booléen : reparationsImmediates
+	Booléen : gotAuSalon
+	Booléen : livreDisponible
 
 DEBUT PROGRAMME
 	Ecrire "J'ai envie de faire un tour en bicyclette. Fait-il beau ?"
+	Lire ilFaitBeau
 	Si ilFaitBeau
 		Ecrire "Ma bicyclette est-elle en état de fonctionnement ?"
+		Lire bicycletteFontionne
 		Si bicycletteFontionne
 			Ecrire "Je fais un tour de bicyclette. The End !"
 		Sinon
 			Ecrire "Je vais au garage."
 			Ecrire "Les réparations sont-elles immédiates ?"
+			Lire reparationsImmediates
 			Si reparationsImmediates
 				Ecrire "Je fais un tour de bicyclette. The End !"
 			Sinon
@@ -23,11 +26,13 @@ DEBUT PROGRAMME
 	Sinon
 		Ecrire "Tant pis, je vais consacrer ma journée à la lecture."
 		Ecrire "Le 1er tome de GoT est-il dans la bibliothèque du salon ?"
+		Lire gotAuSalon
 		Si gotAuSalon
 			Ecrire "Je relis le 1er tome de GoT. The End !"
 		Sinon
 			Ecrire "Je vais à la bibliothèqe municipale"
 			Ecrire "Le livre est-il disponible ?"
+			Lire livreDisponible
 			Si livreDisponible
 				Ecrire "Je rentre à la maison et je lis le 1er tome de GoT. The End !"
 			Sinon

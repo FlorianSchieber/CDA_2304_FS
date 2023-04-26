@@ -1,7 +1,7 @@
 ﻿VARIABLES
-	Entier nombre1
-	Entier nombre2
-	Réel moyenne
+	Entier : nombre1
+	Entier : nombre2
+	Réel : moyenne
 
 DEBUT PROGRAMME
 	Ecrire "Veuillez saisir le premier nombre : "

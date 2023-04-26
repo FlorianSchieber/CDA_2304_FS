@@ -1,0 +1,12 @@
+﻿VARIABLES
+	Chaîne : saisie
+	Entier : essais
+
+CONSTANTES
+	Chaîne : MOT_DE_PASSE <- "formation"
+	Entier : ESSAIS_MAXIMUM <- 3
+
+DEBUT PROGRAMME
+	Tant Que  
+	
+FIN PROGRAMME

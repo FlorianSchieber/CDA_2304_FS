@@ -1,6 +1,6 @@
 ﻿VARIABLES
-	Entier A
-	Entier B
+	Entier : A
+	Entier : B
 
 DEBUT PROGRAMME
 	Ecrire "Veuillez entrer un nombre A entier : "

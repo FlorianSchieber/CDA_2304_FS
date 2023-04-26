@@ -1,0 +1,10 @@
+﻿VARIABLES
+	Chaîne : prenom
+
+DEBUT PROGRAMME
+	Faire
+		Ecrire "Bonjour, quel est votre prénom ?"
+		Lire prenom
+	Répéter tant que |prenom| < 2
+	Ecrire "Bonjour ", prenom
+FIN PROGRAMME

@@ -1,7 +1,7 @@
 ﻿VARIABLES
-	Entier A
-	Entier B
-	Entier C
+	Entier : A
+	Entier : B
+	Entier : C
 
 DEBUT PROGRAMME
 	Ecrire "Veuillez saisir le nombre A : "

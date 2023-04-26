@@ -1,5 +1,5 @@
 ﻿VARIABLES
-	Chaîne prenom
+	Chaîne : prenom
 
 DEBUT PROGRAMME
 	Ecrire "Bonjour, veuillez saisir votre prénom : "

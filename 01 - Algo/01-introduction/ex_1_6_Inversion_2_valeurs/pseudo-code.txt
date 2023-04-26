@@ -1,7 +1,7 @@
 ﻿VARIABLES
-	Entier A
-	Entier B
-	Entier tampon
+	Entier : A
+	Entier : B
+	Entier : tampon
 
 DEBUT PROGRAMME
 	Ecrire "Veuillez entrer un nombre A entier : "

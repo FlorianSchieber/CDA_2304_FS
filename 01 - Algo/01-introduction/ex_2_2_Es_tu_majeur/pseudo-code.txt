@@ -1,5 +1,5 @@
 ﻿VARIABLES
-	Entier A
+	Entier : A
 
 DEBUT PROGRAMME
 	Ecrire "Veuillez entrer votre âge (en années) : "
