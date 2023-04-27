@@ -4,21 +4,21 @@
     {
         static void Main(string[] args)
         {
-            int nombre1;
-            int nombre2;
-            double moyenne;
+            int number1;
+            int number2;
+            double mean;
             
             Console.WriteLine("Veuillez saisir le premier nombre : ");
-            nombre1 = int.Parse(Console.ReadLine());
+            number1 = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Veuillez saisir le second nombre : ");
-            nombre2 = int.Parse(Console.ReadLine());
+            number2 = int.Parse(Console.ReadLine());
 
-            moyenne = (nombre1 + nombre2) / 2.0;
+            mean = (number1 + number2) / 2.0;
 
-            Console.WriteLine("La moyenne de " + nombre1 +
-                " et " + nombre2 +
-                " est : " + moyenne);
+            Console.WriteLine("La moyenne de " + number1 +
+                " et " + number2 +
+                " est : " + mean);
         }
     }
 }

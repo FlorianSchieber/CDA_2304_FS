@@ -11,21 +11,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex_1_4_Aire_et_Volume", "ex
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex_1_5_Secteur_circulaire", "ex_1_5_Secteur_circulaire\ex_1_5_Secteur_circulaire.csproj", "{8B5BAED3-98B8-4209-97DB-9F85824AC182}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_1_6_Inversion_2_valeurs", "ex_1_6_Inversion_2_valeurs\ex_1_6_Inversion_2_valeurs.csproj", "{3D62F3F2-71F3-42E4-A929-7CCC53951863}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex_1_6_Inversion_2_valeurs", "ex_1_6_Inversion_2_valeurs\ex_1_6_Inversion_2_valeurs.csproj", "{3D62F3F2-71F3-42E4-A929-7CCC53951863}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_2_1_Tri_nombres", "ex_2_1_Tri_nombres\ex_2_1_Tri_nombres.csproj", "{73CF94DC-3BA3-463D-890E-06E8659EA47E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex_2_1_Tri_nombres", "ex_2_1_Tri_nombres\ex_2_1_Tri_nombres.csproj", "{73CF94DC-3BA3-463D-890E-06E8659EA47E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_2_2_Es_tu_majeur", "ex_2_2_Es_tu_majeur\ex_2_2_Es_tu_majeur.csproj", "{8B6CEC91-3075-4F8C-917B-389DD4BF40A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex_2_2_Es_tu_majeur", "ex_2_2_Es_tu_majeur\ex_2_2_Es_tu_majeur.csproj", "{8B6CEC91-3075-4F8C-917B-389DD4BF40A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_2_3_Ma_retraite", "ex_2_3_Ma_retraite\ex_2_3_Ma_retraite.csproj", "{FEE9BDFC-58D7-42B4-9611-CA89E002D455}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex_2_3_Ma_retraite", "ex_2_3_Ma_retraite\ex_2_3_Ma_retraite.csproj", "{FEE9BDFC-58D7-42B4-9611-CA89E002D455}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_2_4_Tri_nombres_pp", "ex_2_4_Tri_nombres_pp\ex_2_4_Tri_nombres_pp.csproj", "{76547A7F-9C59-48A3-9B79-FFBF2B7EB7D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex_2_4_Tri_nombres_pp", "ex_2_4_Tri_nombres_pp\ex_2_4_Tri_nombres_pp.csproj", "{76547A7F-9C59-48A3-9B79-FFBF2B7EB7D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_2_5_Ma_bicyclette", "ex_2_5_Ma_bicyclette\ex_2_5_Ma_bicyclette.csproj", "{8A6C4199-8541-4712-BBBA-03E17F84DA62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex_2_5_Ma_bicyclette", "ex_2_5_Ma_bicyclette\ex_2_5_Ma_bicyclette.csproj", "{8A6C4199-8541-4712-BBBA-03E17F84DA62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_3_1_Controler_saisie", "ex_3_1_Controler_saisie\ex_3_1_Controler_saisie.csproj", "{73F028EB-08F0-4B5E-A6C4-DC70C1160EFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex_3_1_Controler_saisie", "ex_3_1_Controler_saisie\ex_3_1_Controler_saisie.csproj", "{73F028EB-08F0-4B5E-A6C4-DC70C1160EFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_3_2_Controler_saisie_limite", "ex_3_2_Controler_saisie_limite\ex_3_2_Controler_saisie_limite.csproj", "{CB50D1AA-A68E-475E-9503-83E847388F2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex_3_2_Controler_saisie_limite", "ex_3_2_Controler_saisie_limite\ex_3_2_Controler_saisie_limite.csproj", "{CB50D1AA-A68E-475E-9503-83E847388F2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_3_3_Intervalle_2_nombres", "ex_3_3_Intervalle_2_nombres\ex_3_3_Intervalle_2_nombres.csproj", "{E28AC2D1-171D-4462-9509-E95BADA3B2AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_3_4_Diviseurs", "ex_3_4_Diviseurs\ex_3_4_Diviseurs.csproj", "{2E2FE6F9-B85C-4F84-8217-7A5A8E4529D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_3_5_Nombre_premier", "ex_3_5_Nombre_premier\ex_3_5_Nombre_premier.csproj", "{653B10FA-28D6-431A-A047-811C47C4BC97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_3_6_Fourchette", "ex_3_6_Fourchette\ex_3_6_Fourchette.csproj", "{E6AB6A59-B2C4-4E1A-AD78-BB29BDF6AD35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +89,22 @@ Global
 		{CB50D1AA-A68E-475E-9503-83E847388F2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB50D1AA-A68E-475E-9503-83E847388F2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB50D1AA-A68E-475E-9503-83E847388F2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E28AC2D1-171D-4462-9509-E95BADA3B2AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E28AC2D1-171D-4462-9509-E95BADA3B2AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E28AC2D1-171D-4462-9509-E95BADA3B2AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E28AC2D1-171D-4462-9509-E95BADA3B2AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E2FE6F9-B85C-4F84-8217-7A5A8E4529D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E2FE6F9-B85C-4F84-8217-7A5A8E4529D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E2FE6F9-B85C-4F84-8217-7A5A8E4529D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E2FE6F9-B85C-4F84-8217-7A5A8E4529D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{653B10FA-28D6-431A-A047-811C47C4BC97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{653B10FA-28D6-431A-A047-811C47C4BC97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{653B10FA-28D6-431A-A047-811C47C4BC97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{653B10FA-28D6-431A-A047-811C47C4BC97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6AB6A59-B2C4-4E1A-AD78-BB29BDF6AD35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6AB6A59-B2C4-4E1A-AD78-BB29BDF6AD35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6AB6A59-B2C4-4E1A-AD78-BB29BDF6AD35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6AB6A59-B2C4-4E1A-AD78-BB29BDF6AD35}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

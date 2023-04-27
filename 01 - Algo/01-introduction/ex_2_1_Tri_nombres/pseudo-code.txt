@@ -7,8 +7,8 @@ DEBUT PROGRAMME
 	Lire A
 	Ecrire "Veuillez entrer un nombre B entier : "
 	Lire B
-	Si A ≤ B
-		Ecrire A, " ≤ ", B
+	Si A < B
+		Ecrire A, " < ", B
 	Sinon
 		Ecrire B, " ≤ ", A
 	Fin Si

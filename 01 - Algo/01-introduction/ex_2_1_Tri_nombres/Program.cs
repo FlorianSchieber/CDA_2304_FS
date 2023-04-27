@@ -13,9 +13,9 @@
             Console.WriteLine("Veuillez entrer un nombre B entier : ");
             B = int.Parse(Console.ReadLine());
 
-            if (A <= B)
+            if (A < B)
             {
-                Console.WriteLine(A + " <= " + B);
+                Console.WriteLine(A + " < " + B);
             }
             else
             {

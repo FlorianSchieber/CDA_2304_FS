@@ -4,13 +4,13 @@
     {
         static void Main(string[] args)
         {
-            String prenom;
+            String firstName;
 
-            Console.WriteLine("Bonjour, veuillez saisir votre prénom : ");
+            Console.Write("Bonjour, veuillez saisir votre prénom : ");
             
-            prenom = Console.ReadLine();
+            firstName = Console.ReadLine();
 
-            Console.WriteLine("Bonjour " + prenom);
+            Console.Write("Bonjour " + firstName);
         }
     }
 }

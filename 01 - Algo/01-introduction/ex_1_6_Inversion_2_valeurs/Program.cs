@@ -6,7 +6,7 @@
         {
             int A;
             int B;
-            int tampon;
+            int temp;
 
             Console.WriteLine("Veuillez entrer un nombre A entier : ");
             A = int.Parse(Console.ReadLine());
@@ -17,9 +17,9 @@
             Console.WriteLine("La valeur de A est : " + A +
                 " et celle de B est : " + B);
 
-            tampon = A;
+            temp = A;
             A = B;
-            B = tampon;
+            B = temp;
 
             Console.WriteLine("La valeur de A est maintenant : " + A +
                 " et celle de B est : " + B);

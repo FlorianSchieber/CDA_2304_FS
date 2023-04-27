@@ -6,11 +6,11 @@
         {
             int A;
             int X;
-            bool AEstEntier;
+            bool AIsInt;
 
             Console.WriteLine("Veuillez entrer votre âge (en années) : ");
-            AEstEntier = int.TryParse(Console.ReadLine(), out A);
-            if (AEstEntier){
+            AIsInt = int.TryParse(Console.ReadLine(), out A);
+            if (AIsInt){
                 X = A - 60;
 
                 if (A < 0)

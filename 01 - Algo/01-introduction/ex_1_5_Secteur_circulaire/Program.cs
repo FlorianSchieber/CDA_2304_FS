@@ -6,7 +6,7 @@
         {
             double R;
             double A;
-            double aire;
+            double area;
 
             const double PI = Math.PI;
 
@@ -16,9 +16,9 @@
             Console.WriteLine("Veuillez saisir l'angle en degrés du secteur circulaire : ");
             A = double.Parse(Console.ReadLine());
 
-            aire = (PI * Math.Pow(R, 2) * A) / 360;
+            area = (PI * Math.Pow(R, 2) * A) / 360;
 
-            Console.WriteLine("L'aire du secteur circulaire est : " + aire);
+            Console.WriteLine("L'aire du secteur circulaire est : " + area);
         }
     }
 }

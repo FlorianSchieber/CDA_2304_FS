@@ -4,15 +4,15 @@
     {
         static void Main(string[] args)
         {
-            string prenom;
+            string firstName;
 
             do
             {
                 Console.WriteLine("Bonjour mon chou, quel est ton prénom ?");
-                prenom = Console.ReadLine();
+                firstName = Console.ReadLine();
             }
-            while (prenom.Length < 2);
-            Console.WriteLine("Bonjour " + prenom);
+            while (firstName.Length < 2);
+            Console.WriteLine("Bonjour " + firstName);
         }
     }
 }

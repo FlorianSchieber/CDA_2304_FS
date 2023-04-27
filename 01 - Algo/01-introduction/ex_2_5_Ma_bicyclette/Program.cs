@@ -6,20 +6,20 @@ namespace ex_2_5_Ma_bicyclette
     {
         static void Main(string[] args)
         {
-            bool ilFaitBeau;
-            bool bicycletteFontionne;
-            bool reparationsImmediates;
-            bool gotAuSalon;
-            bool livreDisponible;
+            bool niceWeather;
+            bool bicycleWorks;
+            bool immediateRepairs;
+            bool gotLivingRoom;
+            bool bookAvailable;
 
 
             Console.WriteLine("J'ai envie de faire un tour en bicyclette. Fait-il beau (O/N) ?");
-            ilFaitBeau = (Console.ReadLine() == "O");
-            if (ilFaitBeau)
+            niceWeather = (Console.ReadLine() == "O");
+            if (niceWeather)
             {
                 Console.WriteLine("Ma bicyclette est-elle en état de fonctionnement (O/N) ?");
-                bicycletteFontionne = (Console.ReadLine() == "O");
-                if (bicycletteFontionne)
+                bicycleWorks = (Console.ReadLine() == "O");
+                if (bicycleWorks)
                 {
                     Console.WriteLine("Je fais un tour de bicyclette. The End !");
                 }
@@ -27,8 +27,8 @@ namespace ex_2_5_Ma_bicyclette
                 {
                     Console.WriteLine("Je vais au garage.");
                     Console.WriteLine("Les réparations sont-elles immédiates (O/N) ?");
-                    reparationsImmediates = (Console.ReadLine() == "O");
-                    if (reparationsImmediates)
+                    immediateRepairs = (Console.ReadLine() == "O");
+                    if (immediateRepairs)
                     {
                         Console.WriteLine("Je fais un tour de bicyclette. The End !");
                     }
@@ -43,8 +43,8 @@ namespace ex_2_5_Ma_bicyclette
             {
                 Console.WriteLine("Tant pis, je vais consacrer ma journée à la lecture.");
                 Console.WriteLine("Le 1er tome de GoT est-il dans la bibliothèque du salon ?");
-                gotAuSalon = (Console.ReadLine() == "O");
-                if (gotAuSalon)
+                gotLivingRoom = (Console.ReadLine() == "O");
+                if (gotLivingRoom)
                 {
                     Console.WriteLine("Je relis le 1er tome de GoT. The End !");
                 }
@@ -52,8 +52,8 @@ namespace ex_2_5_Ma_bicyclette
                 {
                     Console.WriteLine("Je vais à la bibliothèqe municipale");
                     Console.WriteLine("Le livre est-il disponible ?");
-                    livreDisponible = (Console.ReadLine() == "O");
-                    if (livreDisponible)
+                    bookAvailable = (Console.ReadLine() == "O");
+                    if (bookAvailable)
                     {
                         Console.WriteLine("Je rentre à la maison et je lis le 1er tome de GoT. The End !");
                     }
