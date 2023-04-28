@@ -1,0 +1,20 @@
+﻿VARIABLES
+	Réel : sommeDepartEuros
+	Entier : sommeRestanteCentimes
+	Entier : magasins
+
+DEBUT PROGRAMME
+	Ecrire "De combien d'argent dispose Barnabé ? : "
+	Lire sommeDepartEuros
+	sommeRestanteCentimes <- sommeDepartEuros × 100
+	magasin <- 0
+	Tant Que sommeRestanteCentimes > 0
+		Si sommeRestanteCentimes / 2 < 100 // sommeRestanteCentimes / 2 - 100 < 0 (il n'a plus de quoi payer au suivant)
+			sommeRestanteCentimes <- 0 
+		Sinon
+			sommeRestanteCentimes <- sommeRestanteCentimes / 2 - 100
+		Fin Si
+		magasins <- magasins + 1
+	Fin Tant Que
+	Ecrire "Barnabé a acheté dans ", magasins, " magasin(s)."
+FIN PROGRAMME
