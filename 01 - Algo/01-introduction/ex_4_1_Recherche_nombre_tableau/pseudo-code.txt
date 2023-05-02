@@ -1,0 +1,26 @@
+﻿VARIABLES
+	Entier : N
+	Entier : indice
+	Booléen : trouve
+
+CONSTANTES
+	Entier : TABLEAU[] <- {8, 16 ,32, 64, 128, 256, 512}
+
+DEBUT PROGRAMME
+	Ecrire "Veuillez entrer un nombre : "
+	Lire N
+	trouve <- FAUX
+	indice <- 0
+	Tant Que non trouve et indice < |tableau|
+		Si TABLEAU[indice] = N
+			trouve <- VRAI
+		Sinon
+			indice <- indice + 1
+		Fin Si
+	Fin Tant Que
+	Si trouve
+		Ecrire "Nombre trouvé en indice : ", indice
+	Sinon
+		Ecrire "Nombre non trouvé"
+	Fin Si
+FIN PROGRAMME

@@ -1,0 +1,7 @@
+﻿VARIABLES
+	Vecteur Entier : liste
+
+DEBUT PROGRAMME
+	liste <- {128, 64, 8, 512, 16, 32, 256}
+FIN PROGRAMME
+

@@ -7,8 +7,8 @@
 	Booléen : aTrouve
 
 CONSTANTES
-	Entier : DEPART_MINIMUM = 0
-	Entier : DEPART_MAXIMUM = 100
+	Entier : DEPART_MINIMUM <- 0
+	Entier : DEPART_MAXIMUM <- 100
 
 DEBUT PROGRAMME
 	nombreMystere <- RANDOM(DEPART_MINIMUM, DEPART_MAXIMUM)
