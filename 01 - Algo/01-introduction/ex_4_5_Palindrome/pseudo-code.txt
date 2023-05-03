@@ -1,0 +1,34 @@
+﻿VARIABLES
+	Chaîne : phrase
+	Entier : indiceGauche
+	Entier : indiceDroit
+	Booléen : estUnPalindrome
+
+DEBUT PROGRAMME
+	Faire
+		Faire
+			Ecrire "Veuillez saisir une phrase terminée par un point : "
+			Lire phrase
+		Répéter Tant Que phrase = "" ou phrase = "." 
+	Répéter Tant Que phrase[|phrase| - 1] ≠ "."
+	indiceGauche <- 0
+	indiceDroit <- |phrase| - 2
+	estUnPalindrmome <- VRAI
+	Tant Que indiceGauche < indiceDroit et estUnPalindrome
+		Tant Que phrase[indiceGauche] = " " // Suppression des espaces gauches
+			indiceGauche <- indiceGauche + 1
+		Fin Tant Que
+		Tant Que phrase[indiceDroit] = " "// Suppression des espaces droites
+			indiceDroit <- indiceDroit - 1
+		Fin Tant Que
+		Si phrase[indiceGauche] ≠ phrase[indiceDroit]
+			estUnPalindrome <- FAUX
+		Fin Si
+		indiceGauche <- indiceGauche + 1
+		indiceDroit <- indiceDroit - 1
+	Fin Tant Que
+	Si estUnPalindrome
+		Ecrire "La phrase est un palindrome"
+	Sinon
+		Ecrire "La phrase n'est pas un palindrome"
+FIN PROGRAMME

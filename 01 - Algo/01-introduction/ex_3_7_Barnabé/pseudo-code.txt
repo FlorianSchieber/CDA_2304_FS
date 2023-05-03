@@ -9,10 +9,10 @@ DEBUT PROGRAMME
 	sommeRestanteCentimes <- sommeDepartEuros × 100
 	magasin <- 0
 	Tant Que sommeRestanteCentimes > 0
-		Si sommeRestanteCentimes / 2 < 100 // sommeRestanteCentimes / 2 - 100 < 0 (il n'a plus de quoi payer au magasin suivant)
-			sommeRestanteCentimes <- 0 
+		Si sommeRestanteCentimes < 200 // sommeRestanteCentimes / 2 - 100 < 0 (il n'a plus de quoi payer au magasin suivant)
+			sommeRestanteCentimes <- 0 // il dépense tout
 		Sinon
-			sommeRestanteCentimes <- sommeRestanteCentimes / 2 - 100
+			sommeRestanteCentimes <- sommeRestanteCentimes / 2 - 100 // il dépense régulièrement
 		Fin Si
 		magasins <- magasins + 1
 	Fin Tant Que

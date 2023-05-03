@@ -14,7 +14,7 @@
             shops = 0;
             while (remainingSoldCent > 0)
             {
-                if (remainingSoldCent / 2 < 100)
+                if (remainingSoldCent < 200)
                 {
                     remainingSoldCent = 0;
                 }
