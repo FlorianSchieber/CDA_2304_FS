@@ -14,7 +14,7 @@
             trials = MAXIMUM_TRIES;
             isConnected = false;
 
-            while (trials > 0 && !isConnected)
+            do
             {
                 Console.WriteLine("Veuillez saisir votre mot de passe : ");
                 input = Console.ReadLine();
@@ -27,6 +27,7 @@
                     trials--;
                 }
             }
+            while (trials > 0 && !isConnected);
             if (isConnected)
             {
                 Console.WriteLine("Vous êtes connecté");

@@ -15,8 +15,16 @@
                 {
                     Console.WriteLine("Veuillez saisir une phrase terminée par un point : ");
                     sentence = Console.ReadLine();
+                    if (sentence == "" || sentence == ".")
+                    {
+                        Console.WriteLine("Votre phrase est VIDE !");
+                    }
                 }
                 while (sentence == "" || sentence == ".");
+                if (sentence[sentence.Length - 1] != '.')
+                {
+                    Console.WriteLine("Vous n'avez pas mis de POINT à la fin de votre phrase !");
+                }
             }
             while (sentence[sentence.Length - 1] != '.');
             leftIndex = 0;
@@ -32,7 +40,7 @@
                 {
                     rightIndex--;
                 }
-                if (sentence[leftIndex] != sentence[rightIndex])
+                if (Char.ToLower(sentence[leftIndex]) != Char.ToLower(sentence[rightIndex]))
                 {
                     isPalindromic = false;
                 }

@@ -5,7 +5,6 @@
         static void Main(string[] args)
         {
             string text;
-            int occurences;
 
             const string ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 
@@ -17,7 +16,7 @@
             while (text.Length < 120);
             for (int letter = 0; letter < ALPHABET.Length; letter++)
             {
-                occurences = 0;
+                int occurences = 0;
                 for (int index = 0; index < text.Length; index++)
                 {
                     if (char.ToLower(text[index]) == ALPHABET[letter])

@@ -2,7 +2,6 @@
 	Vecteur Entier : liste
 	Entier : tampon
 	Entier : indiceMinimum
-	Entier : minimum
 
 DEBUT PROGRAMME
 	liste <- {128, 64, 8, 512, 16, 32, 256}
@@ -10,9 +9,8 @@ DEBUT PROGRAMME
 		indiceMinimum <- i
 		minimum <- liste[i]
 		Pour j De i à |liste| - 1 
-			Si liste[j] < minimum
+			Si liste[j] < liste[indiceMinimum]
 				indiceMinimum <- j
-				minimum <- liste[j]
 			Fin Si
 		Fin Pour
 		Si indiceMinimum ≠ i

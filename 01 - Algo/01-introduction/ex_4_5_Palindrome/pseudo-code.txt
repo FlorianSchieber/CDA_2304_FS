@@ -9,7 +9,13 @@ DEBUT PROGRAMME
 		Faire
 			Ecrire "Veuillez saisir une phrase terminée par un point : "
 			Lire phrase
-		Répéter Tant Que phrase = "" ou phrase = "." 
+			Si phrase = "" ou phrase = "."
+				Ecrire "Votre phrase est VIDE !"
+			Fin Si
+		Répéter Tant Que phrase = "" ou phrase = "."
+		Si phrase[|phrase| - 1] ≠ "."
+			Ecrire "Vous n'avez pas mis de POINT à la fin de votre phrase !"
+		Fin Si
 	Répéter Tant Que phrase[|phrase| - 1] ≠ "."
 	indiceGauche <- 0
 	indiceDroit <- |phrase| - 2

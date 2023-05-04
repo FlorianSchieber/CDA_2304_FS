@@ -10,7 +10,7 @@ CONSTANTES
 DEBUT PROGRAMME
 	essais <- ESSAIS_MAXIMUM
 	estConnecte <- FAUX
-	Tant Que essais > 0 et non estConnecte
+	Faire
 		Ecrire "Veuillez saisir votre mot de passe : "
 		Lire saisie
 		Si saisie = MOT_DE_PASSE
@@ -18,7 +18,7 @@ DEBUT PROGRAMME
 		Sinon
 			essais <- essais - 1
 		Fin Si
-	Fin Tant Que
+	Tant Que essais > 0 et non estConnecte
 	Si estConnecte
 		Ecrire "Vous êtes connecté"
 	Sinon

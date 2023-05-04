@@ -8,7 +8,7 @@
 
             do
             {
-                Console.WriteLine("Bonjour mon chou, quel est ton prénom ?");
+                Console.WriteLine("Bonjour, veuillez saisir votre prénom (2 caractères minimum) : ");
                 firstName = Console.ReadLine();
             }
             while (firstName.Length < 2);

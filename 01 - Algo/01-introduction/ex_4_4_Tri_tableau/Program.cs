@@ -5,27 +5,22 @@
         static void Main(string[] args)
         {
             int[] list = { 128, 64, 8, 512, 16, 32, 256 };
-            int temp;
-            int indexMin;
-            int min;
 
             // PROCESS
 
             for (int i = 0; i < list.Length - 1; i++)
             {
-                indexMin = i;
-                min = list[i];
+                int indexMin = i;
                 for (int j = i; j < list.Length; j++)
                 {
-                    if (list[j] < min)
+                    if (list[j] < list[indexMin])
                     {
                         indexMin = j;
-                        min = list[j];
                     }
                 }
                 if (indexMin != i)
                 {
-                    temp = list[i];
+                    int temp = list[i];
                     list[i] = list[indexMin];
                     list[indexMin] = temp;
                 }
