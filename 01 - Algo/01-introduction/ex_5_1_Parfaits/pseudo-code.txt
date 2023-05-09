@@ -1,0 +1,26 @@
+﻿VARIABLES
+	Entier : limite
+	Entier : compteNombreParfait
+	Entier : nombreParfait
+	Entier : diviseur
+	Entier : sommeDiviseurs
+
+DEBUT PROGRAMME
+	Ecrire "Veuillez saisir la limite de calcul : "
+	Lire limite
+	compteNombreParfait <- 1
+	nombreParfait <- 1
+	Tant Que compteNombreParfait <= limite
+		sommeDiviseur <- 0
+		Pour diviseur De 1 à nombreParfait exclu
+			Si nombreParfait mod diviseur = 0
+				sommeDiviseur <- sommeDiviseur + diviseur
+			Fin Si
+		Fin Pour
+		Si nombreParfait = sommeDiviseurs
+			Ecrire nombreParfait, " est un nombre parfait."
+			compteNombreParfait <- compteNombreParfait + 1
+		Fin Si
+		nombreParfait <- nombreParfait + 1
+	Fin Tant Que
+FIN PROGRAMME
