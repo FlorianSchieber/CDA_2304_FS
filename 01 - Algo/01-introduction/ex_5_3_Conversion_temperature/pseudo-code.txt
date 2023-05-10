@@ -1,0 +1,44 @@
+﻿VARIABLES
+	Réel : dimension
+	Chaîne : saisie
+	Booléen : uniteEstC
+	Booléen : saisieValide
+	Booléen : uniteValide
+	Booléen : sortieProgramme
+
+DEBUT PROGRAMME
+	saisieValide <- FAUX
+	uniteValide <- FAUX
+	sortieProgramme <- FAUX
+	Faire
+		Lire saisie
+		Si saisie = "quit"
+			sortieProgramme <- VRAI
+		Sinon 
+			Si |saisie| ≥ 3
+				Si saisie[|saisie| - 2 ~ |saisie| - 1] = " C"
+					uniteValude <- VRAI
+					uniteEstC <- VRAI
+				Sinon Si saisie[|saisie| - 2 ~ |saisie| - 1] = " F"
+					uniteValide <- VRAI
+					uniteEstC <- FAUX
+				Fin Si
+				Si uniteValide
+					saisie <- saisie [0 ~ |saisie| - 3]
+					Si saisie est Réel
+						dimension <- saisie en Réel
+						Si dimension ≥ -459.67 et dimension ≤ 5000000
+							
+						Sinon
+							Ecrire "Le nombre n'est pas dans la plage !"
+						Fin Si
+					Sinon
+						Ecrire "Votre saisie est incorrecte !"	
+					Fin Si
+				Sinon
+					Ecrire "Votre saisie est incorrecte !"		
+				Fin Si
+			Sinon
+				Ecrire "Votre saisie est incorrecte !"
+		Fin Si
+	Tant Que (non sortieProgramme)

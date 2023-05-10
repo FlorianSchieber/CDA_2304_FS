@@ -32,20 +32,22 @@
             isPalindromic = true;
             while (leftIndex < rightIndex && isPalindromic)
             {
-                while (sentence[leftIndex] == ' ')
+                if (sentence[leftIndex] == ' ')
                 {
                     leftIndex++;
                 }
-                while (sentence[rightIndex] == ' ')
+                else if (sentence[rightIndex] == ' ')
                 {
                     rightIndex--;
                 }
-                if (Char.ToLower(sentence[leftIndex]) != Char.ToLower(sentence[rightIndex]))
-                {
-                    isPalindromic = false;
+                else { 
+                    if (Char.ToLower(sentence[leftIndex]) != Char.ToLower(sentence[rightIndex]))
+                    {
+                        isPalindromic = false;
+                    }
+                    leftIndex++;
+                    rightIndex--;
                 }
-                leftIndex++;
-                rightIndex--;
             }
             if (isPalindromic)
             {

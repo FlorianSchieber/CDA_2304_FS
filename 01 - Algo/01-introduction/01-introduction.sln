@@ -47,9 +47,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex_4_4_Tri_tableau", "ex_4_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex_4_5_Palindrome", "ex_4_5_Palindrome\ex_4_5_Palindrome.csproj", "{69F02610-6930-4D02-8102-2C9A27EA0234}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_5_1_Parfaits", "ex_5_1_Parfaits\ex_5_1_Parfaits.csproj", "{2CCA098F-5FB5-4F74-8123-3012066AD01C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex_5_1_Parfaits", "ex_5_1_Parfaits\ex_5_1_Parfaits.csproj", "{2CCA098F-5FB5-4F74-8123-3012066AD01C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_5_2_Conversion", "ex_5_2_Conversion\ex_5_2_Conversion.csproj", "{51183138-3F58-4426-9298-06841CCB2B42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex_5_2_Conversion_distance", "ex_5_2_Conversion\ex_5_2_Conversion_distance.csproj", "{51183138-3F58-4426-9298-06841CCB2B42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_5_3_Conversion_temperature", "ex_5_3_Conversion_temperature\ex_5_3_Conversion_temperature.csproj", "{9614C50C-AE69-40CD-88C7-D88885B48251}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -153,6 +155,10 @@ Global
 		{51183138-3F58-4426-9298-06841CCB2B42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51183138-3F58-4426-9298-06841CCB2B42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51183138-3F58-4426-9298-06841CCB2B42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9614C50C-AE69-40CD-88C7-D88885B48251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9614C50C-AE69-40CD-88C7-D88885B48251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9614C50C-AE69-40CD-88C7-D88885B48251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9614C50C-AE69-40CD-88C7-D88885B48251}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

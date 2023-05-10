@@ -10,8 +10,9 @@
             bool validInput;
             bool exit;
 
-            const double MI_IN_KM = 1.609; 
+            const double MI_IN_KM = 1.609;
 
+            
             unitIsKm = true;
             validInput = false;
             exit = false;
@@ -22,8 +23,6 @@
                 input = Console.ReadLine();
                 if (input == "q")
                 {
-                    Console.WriteLine("Au revoir !");
-                    validInput = true;
                     exit = true;
                 }
                 else
@@ -47,14 +46,6 @@
                         if (dimension <= 1000000 && dimension >= 0.01)
                         {
                             validInput = true;
-                            if (unitIsKm)
-                            {
-                                Console.WriteLine(dimension + " kilomètre(s) = " + dimension / MI_IN_KM + " mile(s)");
-                            }
-                            else
-                            {
-                                Console.WriteLine(dimension + " mile(s) = " + dimension * MI_IN_KM + " kilomètre(s)");
-                            }
                         }
                         else
                         {
@@ -68,6 +59,20 @@
                 }
             }
             while (!(validInput || exit));
+            if (validInput) { 
+                if (unitIsKm)
+                {
+                    Console.WriteLine(dimension + " kilomètre(s) = " + dimension / MI_IN_KM + " mile(s)");
+                }
+                else
+                {
+                    Console.WriteLine(dimension + " mile(s) = " + dimension * MI_IN_KM + " kilomètre(s)");
+                }
+            }
+            else if (exit)
+            {
+                Console.WriteLine("Au revoir !");
+            }
         }
     }
 }

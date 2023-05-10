@@ -21,17 +21,17 @@ DEBUT PROGRAMME
 	indiceDroit <- |phrase| - 2
 	estUnPalindrmome <- VRAI
 	Tant Que indiceGauche < indiceDroit et estUnPalindrome
-		Tant Que phrase[indiceGauche] = " " // Suppression des espaces gauches
+		Si phrase[indiceGauche] = " " // Suppression des espaces gauches
 			indiceGauche <- indiceGauche + 1
-		Fin Tant Que
-		Tant Que phrase[indiceDroit] = " "// Suppression des espaces droites
+		Sinon si phrase[indiceDroit] = " " // Suppression des espaces droites
 			indiceDroit <- indiceDroit - 1
-		Fin Tant Que
-		Si phrase[indiceGauche] ≠ phrase[indiceDroit]
-			estUnPalindrome <- FAUX
+		Sinon 
+			Si phrase[indiceGauche] ≠ phrase[indiceDroit]
+				estUnPalindrome <- FAUX
+			Fin Si
+			indiceGauche <- indiceGauche + 1
+			indiceDroit <- indiceDroit - 1
 		Fin Si
-		indiceGauche <- indiceGauche + 1
-		indiceDroit <- indiceDroit - 1
 	Fin Tant Que
 	Si estUnPalindrome
 		Ecrire "La phrase est un palindrome"
