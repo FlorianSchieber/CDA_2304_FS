@@ -1,5 +1,6 @@
 ﻿VARIABLES
 	Réel : dimension
+	Réel : resultat
 	Chaîne : saisie
 	Booléen : uniteEstC
 	Booléen : saisieValide
@@ -28,7 +29,7 @@ DEBUT PROGRAMME
 					Si saisie est Réel
 						dimension <- saisie en Réel
 						Si dimension ≥ -459.67 et dimension ≤ 5000000
-							
+							saisieValide <- VRAI
 						Sinon
 							Ecrire "Le nombre n'est pas dans la plage !"
 						Fin Si
@@ -41,4 +42,10 @@ DEBUT PROGRAMME
 			Sinon
 				Ecrire "Votre saisie est incorrecte !"
 		Fin Si
-	Tant Que (non sortieProgramme)
+	Tant Que non (sortieProgramme ou saisieValide)
+	Si saisieValide
+		Si uniteEstC
+			Resultat
+	Sinon Si sortieProgramme
+		
+	Fin Si

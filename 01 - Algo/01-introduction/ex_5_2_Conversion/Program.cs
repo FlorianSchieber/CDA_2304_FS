@@ -4,18 +4,13 @@
     {
         static void Main(string[] args)
         {
-            double dimension;
+            double dimension = 0;
             string input;
-            bool unitIsKm;
-            bool validInput;
-            bool exit;
+            bool unitIsKm = true;
+            bool validInput = false;
+            bool exit = false;
 
             const double MI_IN_KM = 1.609;
-
-            
-            unitIsKm = true;
-            validInput = false;
-            exit = false;
 
             do
             {
