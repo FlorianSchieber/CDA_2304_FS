@@ -12,6 +12,7 @@ DEBUT PROGRAMME
 	uniteValide <- FAUX
 	sortieProgramme <- FAUX
 	Faire
+		Ecrire "Veuillez saisir une température entre -459.67 et 5 000 000 suivi de 'C' ou 'F' séparés par un espace ('quit' pour quitter) : "
 		Lire saisie
 		Si saisie = "quit"
 			sortieProgramme <- VRAI
@@ -41,11 +42,17 @@ DEBUT PROGRAMME
 				Fin Si
 			Sinon
 				Ecrire "Votre saisie est incorrecte !"
+			Fin Si
 		Fin Si
-	Tant Que non (sortieProgramme ou saisieValide)
-	Si saisieValide
-		Si uniteEstC
-			Resultat
-	Sinon Si sortieProgramme
-		
-	Fin Si
+		Si saisieValide
+			Si uniteEstC
+				resultat <- (dimension × 9 / 5) + 32
+				Ecrire dimension, "°C = ", resultat, "°F"
+			Sinon
+				resultat <- (dimension - 32) × 5 / 9
+				Ecrire dimension, "°F = ", resultat, "°C"
+		Sinon Si sortieProgramme
+			Ecrire "Au revoir"
+		Fin Si
+	Tant Que non sortieProgramme
+	

@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "ex_5_2_Conversion_distance": {
+      "commandName": "Project"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    }
+  }
+}
