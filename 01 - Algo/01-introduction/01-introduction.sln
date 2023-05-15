@@ -51,7 +51,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex_5_1_Parfaits", "ex_5_1_P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex_5_2_Conversion_distance", "ex_5_2_Conversion\ex_5_2_Conversion_distance.csproj", "{51183138-3F58-4426-9298-06841CCB2B42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_5_3_Conversion_temperature", "ex_5_3_Conversion_temperature\ex_5_3_Conversion_temperature.csproj", "{9614C50C-AE69-40CD-88C7-D88885B48251}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ex_5_3_Conversion_temperature", "ex_5_3_Conversion_temperature\ex_5_3_Conversion_temperature.csproj", "{9614C50C-AE69-40CD-88C7-D88885B48251}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ex_6_1_Fruits_legumes", "ex_6_1_Fruits_legumes\ex_6_1_Fruits_legumes.csproj", "{A575EC6F-64AD-4106-860A-7F13B4ED427F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,6 +161,10 @@ Global
 		{9614C50C-AE69-40CD-88C7-D88885B48251}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9614C50C-AE69-40CD-88C7-D88885B48251}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9614C50C-AE69-40CD-88C7-D88885B48251}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A575EC6F-64AD-4106-860A-7F13B4ED427F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A575EC6F-64AD-4106-860A-7F13B4ED427F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A575EC6F-64AD-4106-860A-7F13B4ED427F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A575EC6F-64AD-4106-860A-7F13B4ED427F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

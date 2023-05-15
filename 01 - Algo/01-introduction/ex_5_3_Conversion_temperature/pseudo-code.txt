@@ -55,4 +55,4 @@ DEBUT PROGRAMME
 			Ecrire "Au revoir"
 		Fin Si
 	Tant Que non sortieProgramme
-	
+FIN PROGRAMME

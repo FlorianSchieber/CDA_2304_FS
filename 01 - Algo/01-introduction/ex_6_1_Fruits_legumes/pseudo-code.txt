@@ -1,0 +1,28 @@
+﻿VARIABLES
+	Chaîne nomSaisi;
+	Réel prixSaisi;
+	Chaîne nomsLegumes[];
+	Réel prixLegumes[];
+	Entier indiceMinimum
+
+	DEBUT PROGRAMME
+		Faire
+			Ecrire "Veuillez saisir un légume ('go' pour la suite) : "
+			Lire nomSaisi
+			Si nomSaisi ≠ "go"
+				Ajouter(nomsLegumes, nomSaisi)
+				Ecrire "Veuillez saisir le prix au kilo : "
+				Lire prixSaisi
+				Ajouter(prixLegumes, prixSaisi)
+			Fin Si
+		Tant Que nomSaisi ≠ "go"
+		indiceMinimum <- 0
+		Pour indice de 0 à |nomsLegumes|
+			Ecrire "1 kilogramme de ", nomsLegumes[indice], " coûte ", prixLegumes[indice], " euros."
+			Si prixLegumes[indice] < prixLegumes[indiceMinimum]
+				indiceMinimum <- indice
+			Fin Si
+		Fin Pour
+		Ecrire "Légume le moins cher au kilo : ", nomsLegumes[indiceMinimum]
+	FIN PROGRAMME
+
