@@ -5,17 +5,20 @@
 	Réel prixLegumes[];
 	Entier indiceMinimum
 
+CONSTANTES
+	Chaîne SUITE <- "go"
+
 	DEBUT PROGRAMME
 		Faire
 			Ecrire "Veuillez saisir un légume ('go' pour la suite) : "
 			Lire nomSaisi
-			Si nomSaisi ≠ "go"
+			Si nomSaisi ≠ SUITE
 				Ajouter(nomsLegumes, nomSaisi)
 				Ecrire "Veuillez saisir le prix au kilo : "
 				Lire prixSaisi
 				Ajouter(prixLegumes, prixSaisi)
 			Fin Si
-		Tant Que nomSaisi ≠ "go"
+		Tant Que nomSaisi ≠ SUITE
 		indiceMinimum <- 0
 		Pour indice de 0 à |nomsLegumes|
 			Ecrire "1 kilogramme de ", nomsLegumes[indice], " coûte ", prixLegumes[indice], " euros."

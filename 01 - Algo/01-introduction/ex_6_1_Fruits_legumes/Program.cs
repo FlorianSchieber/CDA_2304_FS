@@ -6,13 +6,15 @@
         double inputPrice;
         List<string> vegetablesNames = new List<string>();
         List<double> vegetablesPrices = new List<double>();
+
+        const string NEXT = "go";
         
 
         do
         {
             Console.Write("Veuillez saisir un légume ('go' pour la suite) : ");
             inputName = Console.ReadLine();
-            if (inputName != "go")
+            if (inputName != NEXT)
             {
                 vegetablesNames.Add(inputName);
                 Console.Write("Veuillez saisir le prix au kilo : ");
@@ -20,7 +22,7 @@
                 vegetablesPrices.Add(inputPrice);
             }
         }
-        while (inputName != "go");
+        while (inputName != NEXT);
         int indexMin = 0;
         for (int index = 0; index < vegetablesNames.Count; index++)
         {

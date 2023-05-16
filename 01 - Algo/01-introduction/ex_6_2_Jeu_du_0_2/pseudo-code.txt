@@ -1,0 +1,44 @@
+﻿VARIABLES
+	Entier choixJoueur
+	Entier choixOrdinateur
+	Entier pointsJoueur
+	Entier pointsOrdinateur
+	Booléen arreterJeu
+
+CONSTANTES
+	Entier POINTS_GAIN <- 10
+
+DEBUT PROGRAMME
+	pointsJoueur <- 0
+	pointsOrdinateur <- 0
+	arreterJeu <- FAUX
+	Faire
+		Ecrire "Veuillez saisir un nombre entre 0 et 2 (nombre négatif pour quitter le jeu) : "
+		Lire choixJoueur
+		choixOridnateur <- RANDOM(0, 2)
+		Si choixJoueur < 0
+			arreterJeu <- VRAI
+		Sinon si choixJoueur <= 2
+			Si choixJoueur = choixOrdinateur + 2 ou choixJoueur = choixOrdinateur - 1
+				pointsJoueur <- pointsJoueur + 1
+			Sinon Si choixJoueur = choixOrdinateur - 2 ou choixJoueur = choixOrdinateur + 1
+				pointsOrdinateur <- pointsOrdinateur + 1
+			Fin Si
+			Ecire "Votre choix : ", choixJoueur, ", votre adversaire : ", choixOrdinateur
+			Ecrire "Votre score : ", pointsJoueur, ", votre adversaire : ", pointsOrdinateur
+		Fin Si
+	Tant Que pointsJoueur < POINTS_GAIN et pointsOrdinateur < POINTS_GAIN et non arreterJeu
+	Si arreterJeu
+		Ecrire "Au revoir !"
+	Sinon
+		Si pointsJoueur >= POINTS_GAIN
+			Ecrire "Vous avez gagné !"
+		Sinon
+			Ecrire "Vous avez perdu...."
+		Fin Si
+	Fin Si
+FIN PROGRAMME
+
+Tant que non condition
+
+
