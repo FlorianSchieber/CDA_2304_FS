@@ -25,12 +25,12 @@ DEBUT PROGRAMME
 	Fin Pour
 	essais <- ESSAIS_DEPART
 	Faire									// Description d'un tour de jeu
-		Ecrire "Le mot mystère est " + motTrouve
+		Ecrire "Le mot mystère est : " + motTrouve
 		Ecrire "Il vous reste " + essais + " essais."
 		Faire								// Vérification du format de la lettre demandée
 			Ecrire "Veuillez saisir une lettre : "
 			Lire lettreSaisie
-		Tant Que |lettreSaisie| =/ 1 Et lettreSaisie =/ " "
+		Tant Que |lettreSaisie| =/ 1 Ou lettreSaisie = " "
 		lettre <- lettreSaisie[0]
 		occurenceLettre <- 0
 		Pour indice De 1 À |motTrouve| - 2	// Recherche et remplacement de la lettre dans le mot
