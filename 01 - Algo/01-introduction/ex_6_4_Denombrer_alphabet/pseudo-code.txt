@@ -1,0 +1,50 @@
+﻿VARIABLES
+	Chaîne : texte
+	Caractère : caractereTexte
+	Caractère : CaractereCherche
+	Entier : occurencesVoyelles
+	Entier : occurencesConsonnes
+	Entier : occurencesChiffres
+	Entier : sommeChiffres
+	Réel : moyenneChiffres
+
+CONSTANTES
+	Chaîne : VOYELLES = "aeiouy"
+	Chaîne : CONSONNES = "bcdfghjklmnpqrstvwxz"
+	Chaîne : CHIFFRES = "0123456789"
+
+DEBUT PROGRAMME
+	Ecrire "Veuillez saisir un texte :"
+	Lire texte
+	occurencesVoyelles <- 0
+	occurencesConsonnes <- 0
+	occurencesChiffres <- 0
+	sommeChiffres <- 0
+	Pour Chaque caractereTexte Dans texte
+		Pour Chaque caractereCherche Dans VOYELLES
+			Si caractereTexte = caractereCherche
+				Incrémenter occurencesVoyelles
+			Fin Si
+		Fin Pour Chaque
+		Pour Chaque caractereCherche Dans CONSONNES
+			Si caractereTexte = caractereCherche
+				Incrémenter occurencesConsonnes
+			Fin Si
+		Fin Pour Chaque
+		Pour Chaque caractereCherche Dans CHIFFRES
+			Si caractereTexte = caractereCherche
+				Incrémenter occurencesChiffres
+				Incrémenter sommeChiffres De caractereCherche	// conversion implicite de caractereCherche en entier
+			Fin Si
+		Fin Pour Chaque
+	Fin Pour Chaque
+	Si occurencesChiffres = 0
+		moyenneChiffres <- 0
+	Sinon
+		moyenneChiffres <- sommeChiffres / occurencesChiffres
+	Fin Si
+	Ecrire "Il y a ", occurencesVoyelles, " voyelles."
+	Ecrire "Il y a ", occurencesConsonnes, " consonnes."
+	Ecrire "Il y a ", occurencesChiffres, " chiffres."
+	Ecrire "La moyenne des chiffres est de ", moyenneChiffres
+FIN PROGRAMME

@@ -1,12 +1,12 @@
 ﻿VARIABLES
-	Entier choixJoueur
-	Entier choixOrdinateur
-	Entier pointsJoueur
-	Entier pointsOrdinateur
-	Booléen arreterJeu
+	Entier : :choixJoueur
+	Entier : choixOrdinateur
+	Entier : pointsJoueur
+	Entier : pointsOrdinateur
+	Booléen : arreterJeu
 
 CONSTANTES
-	Entier POINTS_GAIN <- 10
+	Entier : POINTS_GAIN <- 10
 
 DEBUT PROGRAMME
 	pointsJoueur <- 0

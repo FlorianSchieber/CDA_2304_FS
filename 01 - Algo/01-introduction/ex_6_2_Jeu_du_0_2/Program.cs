@@ -33,8 +33,8 @@
                     {
                         computerPoints++;
                     }
-                    Console.WriteLine("Votre choix : " + playerChoice + ", votre adversaire : " + computerChoice);
-                    Console.WriteLine("Votre score : " + playerPoints + ", votre adversaire : " + computerPoints);
+                    Console.WriteLine("\nVotre choix : " + playerChoice + ", votre adversaire : " + computerChoice);
+                    Console.WriteLine("Votre score : " + playerPoints + ", votre adversaire : " + computerPoints + "\n");
                 }
             }
             while (playerPoints < POINTS_TO_WIN
@@ -42,7 +42,7 @@
                     && !stopGame);
             if (stopGame)
             {
-                Console.WriteLine("Au revoir !");
+                Console.WriteLine("\nAu revoir !");
             }
             else
             {

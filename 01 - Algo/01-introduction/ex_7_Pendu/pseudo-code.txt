@@ -1,0 +1,60 @@
+﻿VARIABLES
+	Chaîne : motMystere
+	Chaîne : motTrouve
+	Entier : essais
+	Chaine : lettreSaisie
+	Caractère : lettre
+	Entier : occurenceLettre
+	Booleeen : gagne
+
+CONSTANTES
+	Entier : LONGUEUR_MINIMALE_MOT <- 5
+	Entier : ESSAIS_DEPART <- 6
+
+DEBUT PROGRAMME
+	Faire									// Vérification de la saisie du mot mystère
+		Ecrire "Veuillez saisir un mot : "
+		Lire motMystere
+	Tant Que |motMystere| < LONGUEUR_MINIMALE_MOT
+	Effacer
+	motTrouve <- motMystere
+	Pour indice De 1 À |motTrouve| - 2		// Remplacement des lettres par des tirets
+		Si motTrouve[indice] =/ ' '			// On ne remplace pas les espaces
+			motTrouve[indice] <- '-'
+		Fin Si
+	Fin Pour
+	essais <- ESSAIS_DEPART
+	Faire									// Description d'un tour de jeu
+		Ecrire "Le mot mystère est " + motTrouve
+		Ecrire "Il vous reste " + essais + " essais."
+		Faire								// Vérification du format de la lettre demandée
+			Ecrire "Veuillez saisir une lettre : "
+			Lire lettreSaisie
+		Tant Que |lettreSaisie| =/ 1 Et lettreSaisie =/ " "
+		lettre <- lettreSaisie[0]
+		occurenceLettre <- 0
+		Pour indice De 1 À |motTrouve| - 2	// Recherche et remplacement de la lettre dans le mot
+			Si lettre = motMystere[indice]
+				motTrouve[indice] <- lettre
+				Incrémenter occurenceLettre
+			Fin Si
+		Fin Pour
+		Si occurenceLettre > 0				// La lettre est-elle présente ?
+			Ecrire lettre + " est présente " + occurenceLettre + " fois dans le mot !"
+		Sinon
+			Ecrire lettre + " n'est pas présente dans le mot..."
+			Décrémenter essais
+		Fin Si
+		gagne <- VRAI
+		Pour indice De 1 À |motTrouve| - 2	// Le mot est-il complet ?
+			Si motTrouve[indice] = '-'
+				gagne <- FAUX
+			Fin Si
+		Fin Pour
+	Tant Que Non gagne Et essais > 0
+	Si gagne
+		Ecrire "Vous avez gagné ! Le mot mystère était : " + motMystere
+	Sinon
+		Ecrire "Vous êtes pendu ! Le mot mystère était : " + motMystere
+	Fin Si
+FIN PROGRAMME

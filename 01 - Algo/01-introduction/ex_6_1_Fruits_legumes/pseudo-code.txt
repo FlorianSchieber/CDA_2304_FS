@@ -1,12 +1,12 @@
 ﻿VARIABLES
-	Chaîne nomSaisi;
-	Réel prixSaisi;
-	Chaîne nomsLegumes[];
-	Réel prixLegumes[];
-	Entier indiceMinimum
+	Chaîne : nomSaisi;
+	Réel : prixSaisi;
+	Chaîne : nomsLegumes[];
+	Réel : prixLegumes[];
+	Entier : indiceMinimum
 
 CONSTANTES
-	Chaîne SUITE <- "go"
+	Chaîne : SUITE <- "go"
 
 	DEBUT PROGRAMME
 		Faire
