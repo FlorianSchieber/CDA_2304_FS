@@ -1,44 +1,44 @@
 ﻿VARIABLES
-	Entier : :choixJoueur
-	Entier : choixOrdinateur
-	Entier : pointsJoueur
-	Entier : pointsOrdinateur
-	Booléen : arreterJeu
+	ENTIER : choixJoueur
+	ENTIER : choixOrdinateur
+	ENTIER : pointsJoueur
+	ENTIER : pointsOrdinateur
+	BOOLÉEN : arreterJeu
 
 CONSTANTES
-	Entier : POINTS_GAIN <- 10
+	ENTIER : POINTS_GAIN <-- 10
+
+FONCTION ENTIER : RANDOM(a, b)
 
 DEBUT PROGRAMME
 	pointsJoueur <- 0
 	pointsOrdinateur <- 0
 	arreterJeu <- FAUX
-	Faire
-		Ecrire "Veuillez saisir un nombre entre 0 et 2 (nombre négatif pour quitter le jeu) : "
-		Lire choixJoueur
-		choixOridnateur <- RANDOM(0, 2)
-		Si choixJoueur < 0
-			arreterJeu <- VRAI
-		Sinon si choixJoueur <= 2
-			Si choixJoueur = choixOrdinateur + 2 ou choixJoueur = choixOrdinateur - 1
-				pointsJoueur <- pointsJoueur + 1
-			Sinon Si choixJoueur = choixOrdinateur - 2 ou choixJoueur = choixOrdinateur + 1
-				pointsOrdinateur <- pointsOrdinateur + 1
-			Fin Si
-			Ecire "Votre choix : ", choixJoueur, ", votre adversaire : ", choixOrdinateur
-			Ecrire "Votre score : ", pointsJoueur, ", votre adversaire : ", pointsOrdinateur
-		Fin Si
-	Tant Que pointsJoueur < POINTS_GAIN et pointsOrdinateur < POINTS_GAIN et non arreterJeu
-	Si arreterJeu
-		Ecrire "Au revoir !"
-	Sinon
-		Si pointsJoueur >= POINTS_GAIN
-			Ecrire "Vous avez gagné !"
-		Sinon
-			Ecrire "Vous avez perdu...."
-		Fin Si
-	Fin Si
+	FAIRE
+		ÉCRIRE "Veuillez saisir un nombre entre 0 et 2 (nombre négatif pour quitter le jeu) : "
+		LIRE choixJoueur
+		choixOridnateur <-- RANDOM(0, 2)
+		SI choixJoueur < 0
+			arreterJeu <-- VRAI
+		SINON SI choixJoueur <= 2
+			SI choixJoueur = choixOrdinateur + 2 OU choixJoueur = choixOrdinateur - 1
+				INCRÉMENTER pointsJoueur
+			SINON SI choixJoueur = choixOrdinateur - 2 OU choixJoueur = choixOrdinateur + 1
+				pointsOrdinateur <-- pointsOrdinateur + 1
+			FIN SI
+			ÉCRIRE "Votre choix : " + choixJoueur, " + votre adversaire : " + choixOrdinateur
+			ECRIRE "Votre score : " + pointsJoueur, " + votre adversaire : " + pointsOrdinateur
+		FIN SI
+	RÉPÉTER TANT QUE pointsJoueur < POINTS_GAIN ET pointsOrdinateur < POINTS_GAIN ET NON arreterJeu
+	SI arreterJeu
+		ÉCRIRE "Au revoir !"
+	SINON
+		SI pointsJoueur >= POINTS_GAIN
+			ÉCRIRE "Vous avez gagné !"
+		SINON
+			ÉCRIRE "Vous avez perdu...."
+		FIN SI
+	FIN SI
 FIN PROGRAMME
-
-Tant que non condition
 
 

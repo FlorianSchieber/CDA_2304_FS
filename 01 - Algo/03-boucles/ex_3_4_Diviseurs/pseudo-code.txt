@@ -1,14 +1,14 @@
 ﻿VARIABLES
-	Entier nombre
-	Entier diviseur
+	ENTIER : nombre
+	ENTIER : diviseur
 
 DEBUT PROGRAMME
-	Ecrire "Veuillez entrer un nombre entier : "
-	Lire nombre
-	Ecrire "Les diviseurs de ", nombre, " sont :"
-	Pour diviseur De 2 à nombre - 1
-		Si nombre % diviseur = 0
-			Ecrire " ", diviseur
-		Fin Si
-	Non Pour
+	ÉCRIRE "Veuillez entrer un nombre entier : "
+	LIRE nombre
+	ÉCRIRE "Les diviseurs de " + nombre + " sont :"
+	POUR diviseur DE 2 À nombre - 1
+		SI nombre MOD diviseur = 0
+			ÉCRIRE " " + diviseur
+		FIN SI
+	NON POUR
 FIN PROGRAMME

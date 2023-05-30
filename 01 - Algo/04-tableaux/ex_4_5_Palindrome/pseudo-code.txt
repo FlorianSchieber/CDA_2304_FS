@@ -1,40 +1,40 @@
 ﻿VARIABLES
-	Chaîne : phrase
-	Entier : indiceGauche
-	Entier : indiceDroit
-	Booléen : estUnPalindrome
+	CHAÎNE : phrase
+	ENTIER : indiceGauche
+	ENTIER : indiceDroit
+	BOOLÉEN : estUnPalindrome
 
 DEBUT PROGRAMME
-	Faire
-		Faire
-			Ecrire "Veuillez saisir une phrase terminée par un point : "
-			Lire phrase
-			Si phrase = "" ou phrase = "."
-				Ecrire "Votre phrase est VIDE !"
-			Fin Si
-		Répéter Tant Que phrase = "" ou phrase = "."
-		Si phrase[|phrase| - 1] ≠ "."
-			Ecrire "Vous n'avez pas mis de POINT à la fin de votre phrase !"
-		Fin Si
-	Répéter Tant Que phrase[|phrase| - 1] ≠ "."
-	indiceGauche <- 0
-	indiceDroit <- |phrase| - 2
-	estUnPalindrmome <- VRAI
-	Tant Que indiceGauche < indiceDroit et estUnPalindrome
-		Si phrase[indiceGauche] = " " // Suppression des espaces gauches
-			indiceGauche <- indiceGauche + 1
-		Sinon si phrase[indiceDroit] = " " // Suppression des espaces droites
-			indiceDroit <- indiceDroit - 1
-		Sinon 
-			Si phrase[indiceGauche] ≠ phrase[indiceDroit]
-				estUnPalindrome <- FAUX
-			Fin Si
-			indiceGauche <- indiceGauche + 1
-			indiceDroit <- indiceDroit - 1
-		Fin Si
-	Fin Tant Que
-	Si estUnPalindrome
-		Ecrire "La phrase est un palindrome"
-	Sinon
-		Ecrire "La phrase n'est pas un palindrome"
+	FAIRE
+		FAIRE
+			ÉCRIRE "Veuillez saisir une phrase terminée par un point : "
+			LIRE phrase
+			SI phrase = "" OU phrase = "."
+				ÉCRIRE "Votre phrase est VIDE !"
+			FIN SI
+		RÉPÉTER TANT QUE phrase = "" OU phrase = "."
+		SI phrase[|phrase| - 1] ≠ "."
+			ÉCRIRE "Vous n'avez pas mis de POINT à la fin de votre phrase !"
+		FIN SI
+	RÉPÉTER TANT QUE phrase[|phrase| - 1] ≠ "."
+	indiceGauche <-- 0
+	indiceDroit <-- |phrase| - 2
+	ESTUNPALINDRMOME <-- VRAI
+	TANT QUE indiceGauche < indiceDroit ET estUnPalindrome
+		SI phrase[indiceGauche] = " " // Suppression des espaces gauches
+			INCRÉMENTER indiceGauche
+		SINON SI phrase[indiceDroit] = " " // Suppression des espaces droites
+			DÉCRÉMENTER indiceDroit
+		SINON 
+			SI phrase[indiceGauche] ≠ phrase[indiceDroit]
+				estUnPalindrome <-- FAUX
+			FIN SI
+			INCRÉMENTER indiceGauche
+			DÉCRÉMENTER indiceDroit
+		FIN SI
+	FIN TANT QUE
+	SI estUnPalindrome
+		ÉCRIRE "La phrase est un palindrome"
+	SINON
+		ÉCRIRE "La phrase n'est pas un palindrome"
 FIN PROGRAMME

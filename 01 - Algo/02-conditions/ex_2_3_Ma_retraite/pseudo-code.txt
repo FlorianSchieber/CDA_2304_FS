@@ -1,20 +1,20 @@
 ﻿VARIABLES
-	Entier : A
-	Entier : X
+	ENTIER : A
+	ENTIER : X
 
 DEBUT PROGRAMME
-	Ecrire "Veuillez entrer votre âge (en années) : "
-	Lire A
-	Si A est Entier
-		X <- A - 60
-		Si X > 0
-			Ecrire "Vous êtes à la retraite depuis ", X, " années."
-		Sinon Si X < 0
-			Ecrire "Il vous reste ", - X, " années avant la retraite."
-		Sinon
-			Ecrire "C'est le moment de prendre sa retraite."
+	ÉCRIRE "Veuillez entrer votre âge (en années) : "
+	LIRE A
+	Si A EST ENTIER
+		X <-- A - 60
+		SI X > 0
+			ÉCRIRE "Vous êtes à la retraite depuis " + X + " années."
+		SINON SI X < 0
+			ÉCRIRE "Il vous reste " + -X + " années avant la retraite."
+		SINON
+			ÉCRIRE "C'est le moment de prendre sa retraite."
 		Fin Si
-	Sinon
-		Ecrire "La valeur fournie n’est pas un âge valide."
-	Fin Si
+	SINON
+		ÉCRIRE "La valeur fournie n’est pas un âge valide."
+	FIN SI
 FIN PROGRAMME

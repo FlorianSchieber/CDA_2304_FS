@@ -1,16 +1,16 @@
 ﻿VARIABLES
-	Entier : A
+	ENTIER : A
 
 DEBUT PROGRAMME
-	Ecrire "Veuillez entrer votre âge (en années) : "
-	Lire A
-	Si A < 0
+	ÉCRIRE "Veuillez entrer votre âge (en années) : "
+	LIRE A
+	SI A < 0
 		Ecrire "Vous n'êtes pas encore né"
-	Sinon
-		Si A < 18
-			Ecrire "Vous êtes mineur"
-		Sinon
-			Ecrire "Vous êtes mineur"
-		Fin Si
-	Fin Si
+	SINON
+		SI A < 18
+			ÉCRIRE "Vous êtes mineur"
+		SINON
+			ÉCRIRE "Vous êtes mineur"
+		FIN SI
+	FIN SI
 FIN PROGRAMME

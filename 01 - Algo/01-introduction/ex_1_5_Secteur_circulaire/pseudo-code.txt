@@ -1,16 +1,16 @@
 ﻿VARIABLES
-	Réel : R
-	Réel : A
-	Réel : aire
+	RÉEL : R
+	RÉEL : A
+	RÉEL : aire
 
 CONSTANTES
-	Réel : PI
+	RÉEL : PI
 
 DEBUT PROGRAMME
-	Ecrire "Veuillez saisir le rayon d'un cercle : "
-	Lire R
-	Ecrire "Veuillez saisir l'angle en degrés du secteur circulaire : "
-	Lire A
-	aire <- (PI × R² × A) / 360
-	Ecrire "L'aire du secteur circulaire est : ", aire)
+	ÉCRIRE "Veuillez saisir le rayon d'un cercle : "
+	LIRE R
+	ÉCRIRE "Veuillez saisir l'angle en degrés du secteur circulaire : "
+	LIRE A
+	aire <-- (PI × R² × A) / 360
+	ÉCRIRE "L'aire du secteur circulaire est : " + aire
 FIN PROGRAMME

@@ -1,13 +1,13 @@
 ﻿VARIABLES
-	Entier : nombre1
-	Entier : nombre2
-	Réel : moyenne
+	ENTIER : nombre1
+	ENTIER : nombre2
+	RÉEL : moyenne
 
 DEBUT PROGRAMME
-	Ecrire "Veuillez saisir le premier nombre : "
-	Lire nombre1
-	Ecrire "Veuillez saisir le second nombre : "
-	Lire nombre2
-	moyenne <- (nombre1 + nombre2) / 2
-	Ecrire "La moyenne de ", nombre1, " et ", nombre2, " est : ", moyenne
+	ÉCRIRE "Veuillez saisir le premier nombre : "
+	LIRE nombre1
+	ÉCRIRE "Veuillez saisir le second nombre : "
+	LIRE nombre2
+	moyenne <-- (nombre1 + nombre2) / 2
+	ÉCRIRE "La moyenne de " + nombre1 + " et " + nombre2 + " est : " + moyenne
 FIN PROGRAMME

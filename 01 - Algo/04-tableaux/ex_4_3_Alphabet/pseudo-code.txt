@@ -1,22 +1,22 @@
 ﻿VARIABLES
-	Chaîne : texte
-	Entier : occurences
+	CHAÎNE : texte
+	ENTIER : occurences
 
 CONSTANTES
-	Chaîne : ALPHABET <- "abc...xyz"
+	CHAÎNE : ALPHABET <-- "abc...xyz"
 
 DEBUT PROGRAMME
-	Faire
-		Ecrire "Veuillez entrer un texte d'au moins 120 caractères : "
-		Lire texte
-	Répéter Tant Que |texte| < 120
-	Pour lettre De 0 à |ALPHABET|
-		occurences <- 0
-		Pour indice De 0 à |texte|
-			Si texte[indice] = ALPHABET[lettre]
-				occurences = occurences + 1
-			Fin Si
-		Fin Pour
-		Ecrire "La lettre ", ALPHABET[lettre], " est présente ", occurences, " fois."
-	Fin Pour
+	FAIRE
+		ÉCRIRE "Veuillez entrer un texte d'au moins 120 caractères : "
+		LIRE texte
+	TANT QUE |texte| < 120
+	POUR lettre DE 0 À |ALPHABET| EXCLU
+		occurences <-- 0
+		POUR indice DE 0 À |texte| EXCLU
+			SI texte[indice] = ALPHABET[lettre]
+				INCRÉMENTER occurences
+			FIN SI
+		FIN POUR
+		ÉCRIRE "La lettre " + ALPHABET[lettre] + " est présente " + occurences + " fois."
+	FIN POUR
 FIN PROGRAMME

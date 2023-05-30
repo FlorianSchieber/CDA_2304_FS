@@ -1,15 +1,15 @@
 ﻿VARIABLES
-	Entier : A
-	Entier : B
+	ENTIER : A
+	ENTIER : B
 
 DEBUT PROGRAMME
-	Ecrire "Veuillez entrer un nombre A entier : "
-	Lire A
-	Ecrire "Veuillez entrer un nombre B entier : "
-	Lire B
-	Si A < B
-		Ecrire A, " < ", B
-	Sinon
-		Ecrire B, " ≤ ", A
-	Fin Si
+	ÉCRIRE "Veuillez entrer un nombre A entier : "
+	LIRE A
+	ÉCRIRE "Veuillez entrer un nombre B entier : "
+	LIRE B
+	SI A < B
+		ÉCRIRE A + " < " + B
+	SINON
+		ÉCRIRE B + " ≤ " + A
+	FIN SI
 FIN PROGRAMME

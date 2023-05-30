@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1_Pendu", "1_Pendu\1_Pendu.csproj", "{14FABCEA-0377-48C4-B3E6-58177E7F0703}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1_Pendu", "1_Pendu\1_Pendu.csproj", "{14FABCEA-0377-48C4-B3E6-58177E7F0703}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{46B80361-963A-40A0-8059-9B97A2C882A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{14FABCEA-0377-48C4-B3E6-58177E7F0703}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14FABCEA-0377-48C4-B3E6-58177E7F0703}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14FABCEA-0377-48C4-B3E6-58177E7F0703}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46B80361-963A-40A0-8059-9B97A2C882A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46B80361-963A-40A0-8059-9B97A2C882A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46B80361-963A-40A0-8059-9B97A2C882A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46B80361-963A-40A0-8059-9B97A2C882A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,27 +1,27 @@
 ﻿VARIABLES
-	Chaîne : saisie
-	Entier : essais
-	Booléen : estConnecte
+	CHAÎNE : saisie
+	ENTIER : essais
+	BOOLÉEN : estConnecte
 
 CONSTANTES
-	Chaîne : MOT_DE_PASSE <- "formation"
-	Entier : ESSAIS_MAXIMUM <- 3
+	CHAÎNE : MOT_DE_PASSE <-- "formation"
+	ENTIER : ESSAIS_MAXIMUM <-- 3
 
 DEBUT PROGRAMME
-	essais <- ESSAIS_MAXIMUM
-	estConnecte <- FAUX
-	Faire
-		Ecrire "Veuillez saisir votre mot de passe : "
-		Lire saisie
-		Si saisie = MOT_DE_PASSE
-			estConnecte <- VRAI
-		Sinon
-			essais <- essais - 1
-		Fin Si
-	Tant Que essais > 0 et non estConnecte
-	Si estConnecte
-		Ecrire "Vous êtes connecté"
-	Sinon
-		Ecrire "Votre compte est bloqué"
-	Fin Si
+	essais <-- ESSAIS_MAXIMUM
+	estConnecte <-- FAUX
+	FAIRE
+		ÉCRIRE "Veuillez saisir votre mot de passe : "
+		LIRE saisie
+		SI saisie = MOT_DE_PASSE
+			estConnecte <-- VRAI
+		SINON
+			essais <-- essais - 1
+		FIN SI
+	TANT QUE essais > 0 ET NON estConnecte
+	SI estConnecte
+		ÉCRIRE "Vous êtes connecté"
+	SINON
+		ÉCRIRE "Votre compte est bloqué"
+	FIN SI
 FIN PROGRAMME

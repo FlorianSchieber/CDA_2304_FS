@@ -1,15 +1,15 @@
 ﻿VARIABLES
-	Réel : R
-	Réel : aire
-	Réel : volume
+	RÉEL : R
+	RÉEL : aire
+	RÉEL : volume
 
 CONSTANTES
-	Réel : PI
+	RÉEL : PI
 
 DEBUT PROGRAMME
-	Ecrire "Veuillez saisir le rayon d'une sphère : "
-	Lire R
-	aire <- 4 × PI × R²
-	volume <- 4/3 × PI × (R ↑ 3)
-	Ecrire "L'aire de la sphère est : ", aire, " et son volume est : ", volume
+	ÉCRIRE "Veuillez saisir le rayon d'une sphère : "
+	LIRE R
+	aire <-- 4 × PI × R²
+	volume <-- 4/3 × PI × (R ↑ 3)
+	ÉCRIRE "L'aire de la sphère est : " + aire + " et son volume est : " + volume
 FIN PROGRAMME

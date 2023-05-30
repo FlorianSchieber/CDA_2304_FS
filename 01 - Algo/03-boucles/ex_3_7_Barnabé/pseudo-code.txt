@@ -1,20 +1,20 @@
 ﻿VARIABLES
-	Réel : sommeDepartEuros
-	Entier : sommeRestanteCentimes
-	Entier : magasins
+	RÉEL : sommeDepartEuros
+	ENTIER : sommeRestanteCentimes
+	ENTIER : magasins
 
 DEBUT PROGRAMME
-	Ecrire "De combien d'argent dispose Barnabé ? : "
+	ÉCRIRE "De combien d'argent dispose Barnabé ? : "
 	Lire sommeDepartEuros
 	sommeRestanteCentimes <- sommeDepartEuros × 100
 	magasin <- 0
-	Tant Que sommeRestanteCentimes > 0
-		Si sommeRestanteCentimes < 200 // sommeRestanteCentimes / 2 - 100 < 0 (il n'a plus de quoi payer au magasin suivant)
-			sommeRestanteCentimes <- 0 // il dépense tout
-		Sinon
-			sommeRestanteCentimes <- sommeRestanteCentimes / 2 - 100 // il dépense régulièrement
-		Fin Si
-		magasins <- magasins + 1
-	Fin Tant Que
-	Ecrire "Barnabé a acheté dans ", magasins, " magasin(s)."
+	TANT QUE sommeRestanteCentimes > 0
+		SI sommeRestanteCentimes < 200 // sommeRestanteCentimes / 2 - 100 < 0 (il n'a plus de quoi payer au magasin suivant)
+			sommeRestanteCentimes <-- 0 // il dépense tout
+		SINON
+			sommeRestanteCentimes <-- sommeRestanteCentimes / 2 - 100 // il dépense régulièrement
+		FIN SI
+		magasins <-- magasins + 1
+	FIN TANT QUE
+	ÉCRIRE "Barnabé a acheté dans " + magasins + " magasin(s)."
 FIN PROGRAMME

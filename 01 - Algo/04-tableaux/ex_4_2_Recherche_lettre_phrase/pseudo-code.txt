@@ -1,25 +1,25 @@
 ﻿VARIABLES
-	Chaîne : lettre
-	Entier : occurences
+	CHAÎNE : lettre
+	ENTIER : occurences
 
 CONSTANTES	
-	Chaîne : PHRASE
+	CHAÎNE : PHRASE
 
 DEBUT PROGRAMME
-	Si PHRASE = "." ou phrase = ""
-		Ecrire "LA CHAINE EST VIDE"
-	Sinon
-		Ecrire "Veuillez entrer une lettre : "
-		Lire lettre
-		occurence <- 0
-		Pour indice De 0 à |PHRASE| - 1
-			Si PHRASE[indice] = lettre
-				occurence <- occurence + 1
-			Fin Si
-		Fin Pour
-		Si occurence = 0
-			Ecrire "La lettre ", lettre, " n'est pas présente"
-		Sinon
-			Ecrire "La lettre ", lettre, " est présente ", occurences, " fois"
-	Fin Si
+	SI PHRASE = "." ou phrase = ""
+		ÉCRIRE "LA CHAINE EST VIDE"
+	SINON
+		ÉCRIRE "Veuillez entrer une lettre : "
+		LIRE lettre
+		occurence <-- 0
+		POUR indice DE 0 À |PHRASE| EXCLU
+			SI PHRASE[indice] = lettre
+				INCRÉMENTER occurence
+			FIN SI
+		FIN POUR
+		SI occurence = 0
+			ÉCRIRE "La lettre " + lettre + " n'est pas présente"
+		SINON
+			ÉCRIRE "La lettre " + lettre + " est présente " + occurences + " fois"
+	FIN SI
 FIN PROGRAMME

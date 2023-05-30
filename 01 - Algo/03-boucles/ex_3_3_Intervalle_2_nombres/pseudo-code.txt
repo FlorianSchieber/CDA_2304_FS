@@ -1,20 +1,20 @@
 ﻿VARIABLES
-	Entier : A
-	Entier : B
-	Entier : indice
+	ENTIER : A
+	ENTIER : B
+	ENTIER : indice
 
 DEBUT PROGRAMME
-	Ecrire "A = "
-	Lire A
-	Ecrire "B = "
-	Lire B
-	Ecrire "Résultat ="
-	Si A < B
-		Pour i de A + 1 à B - 1
-			Ecrire " ", i
-		Fin Pour
-	Sinon
-		Pour i de A - 1 à B + 1 Pas -1
-			Ecrire " ", i
-		Fin Pour
+	ÉCRIRE "A = "
+	LIRE A
+	ÉCRIRE "B = "
+	LIRE B
+	ÉCRIRE "Résultat = "
+	SI A < B
+		POUR i DE A + 1 À B - 1
+			ÉCRIRE " " + i
+		FIN POUR
+	SINON
+		POUR i DE A - 1 À B + 1 PAS -1
+			ÉCRIRE " " + i
+		FIN POUR
 FIN PROGRAMME

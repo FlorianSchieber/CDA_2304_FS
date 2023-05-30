@@ -1,23 +1,22 @@
 ﻿VARIABLES
-	Vecteur Entier : liste
-	Entier : tampon
-	Entier : indiceMinimum
+	VECTEUR ENTIER : liste
+	ENTIER : tampon
+	ENTIER : indiceMinimum
 
 DEBUT PROGRAMME
-	liste <- {128, 64, 8, 512, 16, 32, 256}
-	Pour i De 0 à |liste| - 2
-		indiceMinimum <- i
-		minimum <- liste[i]
-		Pour j De i à |liste| - 1 
-			Si liste[j] < liste[indiceMinimum]
-				indiceMinimum <- j
-			Fin Si
-		Fin Pour
-		Si indiceMinimum ≠ i
-			tampon <- liste[i]
-			liste[i] <- liste[indiceMinimum]
-			liste[indiceMinimum] <- tampon
-		Fin Si
-	Fin Pour
+	liste <-- {128, 64, 8, 512, 16, 32, 256}
+	POUR i DE 0 À |liste| - 2
+		indiceMinimum <-- i
+		POUR j DE i À |liste| - 1 
+			SI liste[j] < liste[indiceMinimum]
+				indiceMinimum <-- j
+			FIN SI
+		FIN POUR
+		SI indiceMinimum ≠ i
+			tampon <-- liste[i]
+			liste[i] <-- liste[indiceMinimum]
+			liste[indiceMinimum] <-- tampon
+		FIN SI
+	FIN POUR
 FIN PROGRAMME
 

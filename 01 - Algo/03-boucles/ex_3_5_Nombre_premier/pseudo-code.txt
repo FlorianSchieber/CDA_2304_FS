@@ -1,25 +1,25 @@
 ﻿VARIABLES
-	Entier : N
-	Entier : diviseur
-	Booléen : estCompose
+	ENTIER : N
+	ENTIER : diviseur
+	BOOLÉEN : estCompose
 
 DEBUT PROGRAMME
-	Ecrire "Veuillez entrer un nombre : "
-	Lire N
-	Si N > 1
-		estCompose <- FAUX
-		diviseur <- 2
-		Tant Que non estCompose et diviseur < N
-			Si N % diviseur = 0 // Si on trouve un diviseur
-				estCompose <- VRAI
-			Fin Si
-			diviseur <- diviseur + 1 
-		Fin Tant Que
-		Si estCompose
-			Ecrire N, " est composé."
+	ÉCRIRE "Veuillez entrer un nombre : "
+	LIRE N
+	SI N > 1
+		estCompose <-- FAUX
+		diviseur <-- 2
+		TANT QUE NON estCompose ET diviseur < N
+			SI N MOD diviseur = 0 // Si on trouve un diviseur
+				estCompose <-- VRAI
+			FIN SI
+			diviseur <-- diviseur + 1 
+		FIN TANT QUE
+		SI estCompose
+			ÉCRIRE N + " est composé."
 		Sinon
-			Ecrire N, " est premier."
-		Fin Si
-	Sinon
-		Ecrire "Par définition, ", N, " n'est pas premier."
+			ÉCRIRE N + " est premier."
+		FIN SI
+	SINON
+		ÉCRIRE "Par définition, " + N + " n'est pas premier."
 FIN PROGRAMME

@@ -13,7 +13,7 @@ CONSTANTES
 
 DEBUT PROGRAMME
 	Faire									// Vérification de la saisie du mot mystère
-		Ecrire "Veuillez saisir un mot : "
+		Ecrire "Veuillez saisir un mot de " + LONGUEUR_MINIMALE_MOT + " caractères minimum : "
 		Lire motMystere
 	Tant Que |motMystere| < LONGUEUR_MINIMALE_MOT
 	Effacer

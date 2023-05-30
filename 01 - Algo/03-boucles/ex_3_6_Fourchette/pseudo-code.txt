@@ -1,36 +1,36 @@
 ﻿VARIABLES
-	Entier : saisie
-	Entier : nombreMystere
-	Entier : minimumFouchette
-	Entier : maximumFouchette
-	Entier : essais
-	Booléen : aTrouve
+	ENTIER : saisie
+	ENTIER : nombreMystere
+	ENTIER : minimumFouchette
+	ENTIER : maximumFouchette
+	ENTIER : essais
+	BOOLÉEN : aTrouve
 
 CONSTANTES
-	Entier : DEPART_MINIMUM <- 0
-	Entier : DEPART_MAXIMUM <- 100
+	ENTIER : DEPART_MINIMUM <-- 0
+	ENTIER : DEPART_MAXIMUM <-- 100
 
 DEBUT PROGRAMME
-	nombreMystere <- RANDOM(DEPART_MINIMUM, DEPART_MAXIMUM)
-	minimumFourchette <- DEPART_MINIMUM
-	maximumFourchette <- DEPART_MINIMUM
-	essais <- 0
-	aTrouve <- FAUX
-	Tant Que non aTrouve
-		Faire
-			Ecrire "Veuillez saisir un nombre entre", minimumFourchette, " et ", maximumFouchette, " : "
-			Lire saisie
-		Répéter Tant Que saisie < minimumFourchette ou saisie > maximumFourchette
+	nombreMystere <-- RANDOM(DEPART_MINIMUM, DEPART_MAXIMUM)
+	minimumFourchette <-- DEPART_MINIMUM
+	maximumFourchette <-- DEPART_MINIMUM
+	essais <-- 0
+	aTrouve <-- FAUX
+	TANT QUE NON aTrouve
+		FAIRE
+			ÉCRIRE "Veuillez saisir un nombre entre" + minimumFourchette + " et " + maximumFouchette + " : "
+			LIRE saisie
+		TANT QUE saisie < minimumFourchette OU saisie > maximumFourchette
 		essais <- essais + 1
-		Si saisie < nombreMystere
-			Ecrire "Trop petit !"
-			minimumFourchette <- saisie + 1		
-		Sinon si saisie > nombreMystere
-			Ecrire "Trop grand !"
-			maximumFourchette <- saisie - 1
-		Sinon
-			Ecrire "Bravo, vous avez trouvé en ", essais, " essais."
-			aTrouve <- VRAI
-		Fin Si
-	Fin Tant Que
+		SI saisie < nombreMystere
+			ÉCRIRE "Trop petit !"
+			minimumFourchette <-- saisie + 1		
+		SINON SI saisie > nombreMystere
+			ÉCRIRE "Trop grand !"
+			maximumFourchette <-- saisie - 1
+		SINON
+			ÉCRIRE "Bravo, vous avez trouvé en " + essais + " essais."
+			aTrouve <-- VRAI
+		FIN SI
+	FIN TANT QUE
 FIN PROGRAMME

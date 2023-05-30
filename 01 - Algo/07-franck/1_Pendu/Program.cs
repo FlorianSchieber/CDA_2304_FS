@@ -17,7 +17,7 @@
 
             do // Vérification de la saisie du mot mystère
             {
-                Console.Write("Veuillez saisir un mot : ");
+                Console.Write("Veuillez saisir un mot de " + WORD_MIN_LENGTH + " caractères minimum : ");
                 mysteryWord = Console.ReadLine();
             }
             while (mysteryWord.Length < WORD_MIN_LENGTH);

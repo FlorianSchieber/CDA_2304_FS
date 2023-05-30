@@ -1,50 +1,50 @@
 ﻿VARIABLES
-	Réel : dimension
-	Chaîne : saisie
-	Booléen : uniteEstKm
-	Booléen : saisieValide
-	Booléen : sortiePorgramme
+	RÉEL : dimension
+	CHAÎNE : saisie
+	BOOLÉEN : uniteEstKm
+	BOOLÉEN : saisieValide
+	BOOLÉEN : sortiePorgramme
 
 CONSTANTES
-	Réel : MI_EN_KM <- 1.609
+	RÉEL : MI_EN_KM <-- 1.609
 	
 DEBUT PROGRAMME
-	saisieValide <- FAUX
-	sortieProgramme <- FAUX
-	Faire
-		Ecrire "Veuillez saisir un nombre entre 0.01 et 1 000 000 à convertir (éventuellement suivi d'une unité [km/mi]) : "
-		Lire saisie
-		Si saisie = "q" // Si l'utilisateur veut quitter le programme
-			sortieProgramme <- VRAI
-		Sinon
-			uniteEstKm <- VRAI  // par défaut, l'unité est le km
-			Si |saisie| ≥ 2 // On vérifie les deux derniers caractères
-				Si saisie[|saisie| - 2 ~ |saisie| - 1] = "km"
-					saisie <- saisie[0 ~ |saisie| - 2]
-				Sinon Si saisie[|saisie| - 2 ~ |saisie| - 1] = "mi"
+	saisieValide <-- FAUX
+	sortieProgramme <-- FAUX
+	FAIRE
+		ÉCRIRE "Veuillez saisir un nombre entre 0.01 et 1 000 000 à convertir (éventuellement suivi d'une unité [km/mi]) : "
+		LIRE saisie
+		SI saisie = "q" // Si l'utilisateur veut quitter le programme
+			sortieProgramme <-- VRAI
+		SINON
+			uniteEstKm <-- VRAI  // par défaut, l'unité est le km
+			SI |saisie| ≥ 2 // On vérifie les deux derniers caractères
+				SI saisie[|saisie| - 2 ~ |saisie| - 1] = "km"
+					saisie <-- saisie[0 ~ |saisie| - 2]
+				SINON SI saisie[|saisie| - 2 ~ |saisie| - 1] = "mi"
 					uniteEstKm <- FAUX
-					saisie <- saisie[0 ~ |saisie| - 2]
-				Fin Si
-			Fin Si
-			Si saisie est Réel // On vérifie qu'il s'agit bien d'un nombre
-				dimension <- saisie en Réel
-				Si dimension ≥ 0.01 et dimension ≤ 1000000 // On vérifie que ce nombre est dans la plage donnée
-					saisieValide <- VRAI
-					Fin Si
-				Sinon
-					Ecrire "Le nombre n'est pas dans la plage !"
-				Fin Si
-			Sinon
-				Ecrire "Votre saisie est incorrecte !"
-			Fin Si
-		Fin Si
-	Tant Que non (saisieValide ou sortieProgramme)
-	Si saisieValide
-		Si uniteEnKm
-			Ecrire dimension, " kilomètre(s) = ", dimension / MI_IN_KM, " mile(s)"
-		Sinon
-			Ecrire dimension, " mile(s) = ", dimension * MI_IN_KM, " kilomètre(s)"
-	Sinon Si sortieProgramme
-		Ecrire "Au revoir !"
-	Fin Si
+					saisie <-- saisie[0 ~ |saisie| - 2]
+				FIN SI
+			FIN SI
+			SI saisie EST RÉEL // On vérifie qu'il s'agit bien d'un nombre
+				dimension <-- saisie COMME RÉEL
+				SI dimension ≥ 0.01 ET dimension ≤ 1000000 // On vérifie que ce nombre est dans la plage donnée
+					saisieValide <-- VRAI
+					FIN SI
+				SINON
+					ÉCRIRE "Le nombre n'est pas dans la plage !"
+				FIN SI
+			SINON
+				ÉCRIRE "Votre saisie est incorrecte !"
+			FIN SI
+		FIN SI
+	RÉPÉTER TANT QUE NON (saisieValide OU sortieProgramme)
+	SI saisieValide
+		SI uniteEnKm
+			ÉCRIRE dimension + " kilomètre(s) = " + (dimension / MI_IN_KM) + " mile(s)"
+		SINON
+			ÉCRIRE dimension + " mile(s) = " + (dimension * MI_IN_KM) + " kilomètre(s)"
+	SINON SI sortieProgramme
+		ÉCRIRE "Au revoir !"
+	FIN SI
 FIN PROGRAMME
