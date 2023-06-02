@@ -1,0 +1,61 @@
+﻿FONCTION RÉEL : tronquerCentimes(RÉEL : valeur)
+	DEBUT FONCTION
+		RETOURNER └valeur * 100┘ / 100.
+	FIN FONCTION
+
+FONCTION RÉEL : tauxInteretMensuel(RÉEL : tauxInteretAnnuel)
+	DEBUT FONCTION
+		RETOURNER tauxInteretAnnuel / 12
+	FIN FONCTION
+
+FONCTION RÉEL : mensualitePret(RÉEL : txAnnuel, RÉEL : K, ENTIER : nbrAnneeRmbt)
+	VARIABLES LOCALES
+		RÉEL : tm		// Taux d'intérêt mensuel
+		RÉEL : a		// Mensualité constante
+		RÉEL : Q
+		ENTIER : n		// Nombre de mois de remboursement
+	DEBUT FONCTION
+		tm <-- tauxInteretMensuel(txAnnuel)
+		n <-- 12 * nbrAnneeRmbt
+		Q <-- 1 - (1 + tm) ^ -n
+		a <-- K * tm / Q
+		RETOURNER a
+	FIN FONCTION
+
+PROCÉDURE : afficherTableauAmortissementPret(Réel : txAnnuel, RÉEL : capitalEmprunte, ENTIER : nbAnneeRmbt)
+	VARIABLES LOCALES
+		RÉEL : Kn		// Capital au mois n
+		RÉEL : partInteret
+		RÉEL : partCapital
+		RÉEL : tm		// Taux d'intérêt mensuel
+		RÉEL : mensualite
+		ENTIER : n		// mois
+	DÉBUT PROCÉDURE
+		mensualite <-- mensualitePret(txAnnuel, capitalEmprunte, nbAnneeRmbt)
+		tm <-- tauxInteretMensuel(txAnnuel)
+		Kn <-- capitalEmprunte
+		partInteret <-- 0
+		partCapital <-- 0
+		ÉCRIRE LIGNE "Mois ↹ | Part intérêt ↹ | Part capital ↹ | Capital restant ↹ | Mensualité"
+		POUR n DE 0 À nbAnneeRmbt * 12
+			ÉCRIRE LIGNE n + " ↹ | " + tronquerCentimes(partInteret) + " ↹ | " + tronquerCentimes(partCapital) + " ↹ | " + tronquerCentimes(Kn) + " ↹ | " + mensualite
+			partInteret <-- Kn * tm
+			partCapital <-- mensualite - partInteret
+			DÉCRÉMENTER Kn DE partCapital
+		FIN POUR
+	FIN PROCÉDURE
+
+VARIABLES
+	RÉEL : tauxInteretAnnuel
+	RÉEL : capitalEmprunte
+	ENTIER : nbrAnneeRbmt
+
+DEBUT PROGRAMME
+	ECRIRE "Veuillez saisir le taux d'intérêt annuel : "
+	LIRE tauxInteretAnnuel
+	ECRIRE "Veuillez saisir le capital emprunté : "
+	LIRE capitalEmprunte
+	ECRIRE "Veuillez saisir le nombre d'années de remboursement : "
+	LIRE nbrAnneeRbmt
+	afficherTableauAmortissementPret(tauxInteretAnnuel, capitalEmprunte, nbrAnneeRbmt)
+FIN PROGRAMME

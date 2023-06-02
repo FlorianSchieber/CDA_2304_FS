@@ -4,15 +4,15 @@
     {
         static void Main(string[] args)
         {
+            const string VOWELS = "aeiouy";
+            const string CONSONANTS = "bcdfghjklmnpqrstvwxz";
+            const string DIGITS = "0123456789";
+
             string text;
             int vowelsCount = 0;
             int consonantsCount = 0;
             int digitsCount = 0;
             int digitsSum = 0;
-
-            const string VOWELS = "aeiouy";
-            const string CONSONANTS = "bcdfghjklmnpqrstvwxz";
-            const string DIGITS = "0123456789";
 
             Console.WriteLine("Veuillez saisir un texte : ");
             text = Console.ReadLine();

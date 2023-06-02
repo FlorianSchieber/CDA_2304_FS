@@ -1,27 +1,27 @@
-﻿VARIABLES
-	Entier : personne
-	Entier : jeunes
-	Entier : ages[PERSONNES]
-
-CONSTANTES
+﻿CONSTANTES
 	Entier : AGE_VIEUX <- 20
 	Entier : PERSONNES <- 20
+
+VARIABLES
+	ENTIER : personne
+	ENTIER : jeunes
+	ENTIER[PERSONNES] : ages
 	
 
 DEBUT PROGRAMME
-	jeunes <- 0
-	Pour personne De 0 à PERSONNES - 1
-		Ecrire "Veuillez entrer l'âge de la personne n°", personne + 1
-		Lire ages[personne]
-		Si ages[personne] < AGE_VIEUX
-			jeunes <- jeunes + 1
-		Fin Si
-	Fin Pour
-	Si jeunes = 0
-		Ecrire "Toutes les personnes ont moins de ", AGE_VIEUX, " ans."
-	Sinon Si jeunes = PERSONNES
-		Ecrire "Toutes les personnes ont ", AGE_VIEUX, " ans ou plus."
+	jeunes <-- 0
+	POUR personne DE 0 À PERSONNES - 1
+		ÉCRIRE "Veuillez entrer l'âge de la personne n°" + (personne + 1)
+		LIRE ages[personne]
+		SI ages[personne] < AGE_VIEUX
+			INCRÉMENTER jeunes
+		FIN SI
+	FIN POUR
+	SI jeunes = 0
+		ÉCRIRE "Toutes les personnes ont moins de " + AGE_VIEUX + " ans."
+	SINON SI jeunes = PERSONNES
+		ÉCRIRE "Toutes les personnes ont " + AGE_VIEUX + " ans ou plus."
 	Sinon
-		Ecrire "Il y a ", jeunes, " personnes de moins de ", AGE_VIEUX, " ans, et ", PERSONNES - jeunes, " autres personnes."
-	Fin Si
+		ÉCRIRE "Il y a " + jeunes + " personnes de moins de " + AGE_VIEUX + " ans, et " + (PERSONNES - jeunes) + " autres personnes."
+	FIN SI
 FIN PROGRAMME

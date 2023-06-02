@@ -14,7 +14,7 @@ DEBUT PROGRAMME
 	FAIRE
 		ÉCRIRE "Veuillez saisir un nombre entre 0.01 et 1 000 000 à convertir (éventuellement suivi d'une unité [km/mi]) : "
 		LIRE saisie
-		SI saisie = "q" // Si l'utilisateur veut quitter le programme
+		SI saisie = "q"			// Si l'utilisateur veut quitter le programme
 			sortieProgramme <-- VRAI
 		SINON
 			uniteEstKm <-- VRAI  // par défaut, l'unité est le km
@@ -26,9 +26,9 @@ DEBUT PROGRAMME
 					saisie <-- saisie[0 ~ |saisie| - 2]
 				FIN SI
 			FIN SI
-			SI saisie EST RÉEL // On vérifie qu'il s'agit bien d'un nombre
+			SI saisie EST RÉEL			// On vérifie qu'il s'agit bien d'un nombre
 				dimension <-- saisie COMME RÉEL
-				SI dimension ≥ 0.01 ET dimension ≤ 1000000 // On vérifie que ce nombre est dans la plage donnée
+				SI dimension ≥ 0.01 ET dimension ≤ 1000000 //			On vérifie que ce nombre est dans la plage donnée
 					saisieValide <-- VRAI
 					FIN SI
 				SINON

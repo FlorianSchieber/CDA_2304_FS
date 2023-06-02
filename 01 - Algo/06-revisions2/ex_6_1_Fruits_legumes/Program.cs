@@ -2,12 +2,12 @@
 {
     private static void Main(string[] args)
     {
+        const string NEXT = "go";
+
         string inputName;
         double inputPrice;
         List<string> vegetablesNames = new List<string>();
         List<double> vegetablesPrices = new List<double>();
-
-        const string NEXT = "go";
         
 
         do

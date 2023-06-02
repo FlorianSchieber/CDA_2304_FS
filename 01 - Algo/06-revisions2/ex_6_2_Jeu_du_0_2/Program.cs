@@ -4,13 +4,13 @@
     {
         static void Main(string[] args)
         {
+            const int POINTS_TO_WIN = 10;
+
             int playerChoice;
             int computerChoice;
             int playerPoints = 0;
             int computerPoints = 0;
             bool stopGame = false;
-
-            const int POINTS_TO_WIN = 10;
 
             Random rand = new Random();
 

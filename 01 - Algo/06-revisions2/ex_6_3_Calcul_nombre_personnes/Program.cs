@@ -4,11 +4,10 @@
     {
         static void Main(string[] args)
         {
-            int youngs = 0;
-
             const int OLD_AGE = 20;
             const int PEOPLE = 20;
 
+            int youngs = 0;
             int[] ages = new int[PEOPLE];
 
             for (int person = 0; person < PEOPLE; person++)

@@ -1,12 +1,12 @@
-﻿VARIABLES
+﻿CONSTANTES
+	CHAÎNE : SUITE <-- "go"
+
+VARIABLES
 	CHAÎNE : nomSaisi;
 	RÉEL : prixSaisi;
 	VECTEUR CHAÎNE : nomsLegumes;
 	VECTEUR RÉEL : prixLegumes;
 	ENTIER : indiceMinimum
-
-CONSTANTES
-	CHAÎNE : SUITE <-- "go"
 
 	DEBUT PROGRAMME
 		FAIRE

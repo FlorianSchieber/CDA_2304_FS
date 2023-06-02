@@ -1,12 +1,12 @@
-﻿VARIABLES
+﻿CONSTANTES
+	ENTIER : POINTS_GAIN <-- 10
+
+VARIABLES
 	ENTIER : choixJoueur
 	ENTIER : choixOrdinateur
 	ENTIER : pointsJoueur
 	ENTIER : pointsOrdinateur
 	BOOLÉEN : arreterJeu
-
-CONSTANTES
-	ENTIER : POINTS_GAIN <-- 10
 
 FONCTION ENTIER : RANDOM(a, b)
 
