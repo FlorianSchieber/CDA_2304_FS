@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bouteille
+namespace CL_Bouteille
 {
-    internal class Bouteille
+    public class Bouteille
     {
         private const double CAPACITE_PAR_DEFAUT = 1;
 
@@ -16,7 +15,7 @@ namespace Bouteille
         private bool estOuverte;
         private string nom;
 
-        public Bouteille(double _capaciteEnL,string _nom)
+        public Bouteille(double _capaciteEnL, string _nom)
         {
             this.capaciteEnL = _capaciteEnL;
             this.contenuEnL = _capaciteEnL;
@@ -67,22 +66,14 @@ namespace Bouteille
                     this.contenuEnL = this.capaciteEnL;
                     return true;
                 }
-                else
-                {
-                    return false;
-                }
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         public bool Remplir(double volumeAjouteEnL)
         {
             if (this.estOuverte)
             {
-
                 if (volumeAjouteEnL > 0)
                 {
                     double nouveauContenuEnL = this.contenuEnL + volumeAjouteEnL;
@@ -92,20 +83,10 @@ namespace Bouteille
                         this.contenuEnL = nouveauContenuEnL;
                         return true;
                     }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                else
-                {
-                    return false;
                 }
             }
-            else
-            {
-                return false;
-            }
+            return false;
+            
         }
 
         public bool Vider()
@@ -117,15 +98,8 @@ namespace Bouteille
                     this.contenuEnL = 0;
                     return true;
                 }
-                else
-                {
-                    return false;
-                }
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         public bool Vider(double volumeRetireEnL)
@@ -141,20 +115,9 @@ namespace Bouteille
                         this.contenuEnL = nouveauContenuEnL;
                         return true;
                     }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                else
-                {
-                    return false;
                 }
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         public override string ToString()
