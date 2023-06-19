@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CL_Papillon
+namespace CL_Papillon.Stades
 {
-    public class Chrysalide : StadeLepidoptere
+    internal class Chrysalide : StadeLepidoptere
     {
         public Chrysalide()
         {
@@ -16,6 +16,11 @@ namespace CL_Papillon
         public override StadeLepidoptere SeMetamorphoser()
         {
             return new Papillon();
+        }
+
+        public override void SeDeplacer()
+        {
+            Console.WriteLine("Je ne me déplace pas !");
         }
     }
 }

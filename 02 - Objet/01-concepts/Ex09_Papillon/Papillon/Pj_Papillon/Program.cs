@@ -7,10 +7,13 @@ namespace Pj_Papillon
         static void Main(string[] args)
         {
             Lepidoptere monLepidoptere = new Lepidoptere();
+            monLepidoptere.SeDeplacer();
             monLepidoptere.SeMetamorphoser();
+            monLepidoptere.SeDeplacer();
             monLepidoptere.SeMetamorphoser();
+            monLepidoptere.SeDeplacer();
             monLepidoptere.SeMetamorphoser();
-            monLepidoptere.SeMetamorphoser();
+            monLepidoptere.SeDeplacer();
 
         }
     }

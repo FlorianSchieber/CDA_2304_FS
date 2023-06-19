@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CL_Papillon.Stades;
 
 namespace CL_Papillon
 {
@@ -15,10 +16,14 @@ namespace CL_Papillon
             this.sonStade = new Chenille();
         }
 
-        public bool SeMetamorphoser()
+        public void SeMetamorphoser()
         {
             this.sonStade = this.sonStade.SeMetamorphoser();
-            return true;
+        }
+
+        public void SeDeplacer()
+        {
+            this.sonStade.SeDeplacer();
         }
     }
 }

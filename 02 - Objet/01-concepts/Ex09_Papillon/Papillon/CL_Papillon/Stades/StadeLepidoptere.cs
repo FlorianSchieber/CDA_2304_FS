@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CL_Papillon
+namespace CL_Papillon.Stades
 {
-    public abstract class StadeLepidoptere
+    internal abstract class StadeLepidoptere
     {
         public abstract StadeLepidoptere SeMetamorphoser();
 
+        public abstract void SeDeplacer();
     }
 }
