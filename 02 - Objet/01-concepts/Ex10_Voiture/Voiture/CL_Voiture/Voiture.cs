@@ -14,26 +14,35 @@ namespace CL_Voiture
         Moteur sonMoteur;
         Roue[] sesRoues;
 
-        public Voiture()
-        {
-            this.marque = "";
-            this.sonMoteur = new Moteur();
-            this.sesRoues = new Roue[NOMBRE_ROUES];
-            for (int i = 0; i < NOMBRE_ROUES; i++)
+        public Voiture() : this("",
+            new Moteur(),
+            new Roue[]
             {
-                this.sesRoues[i] = new Roue();
-            }
+                new Roue(),
+                new Roue(),
+                new Roue(),
+                new Roue()
+            })
+        {
         }
 
         public Voiture(string _marque, Moteur _sonMoteur, Roue[] _sesRoues)
         {
-            this.marque = _marque;
-            this.sonMoteur = new Moteur(_sonMoteur);
-            this.sesRoues = new Roue[NOMBRE_ROUES];
-            for (int i = 0; i < NOMBRE_ROUES; i++)
+            if (_sesRoues.Count() == NOMBRE_ROUES)
             {
-                this.sesRoues[i] = new Roue(_sesRoues[i]);
+                this.marque = _marque;
+                this.sonMoteur = new Moteur(_sonMoteur);
+                this.sesRoues = new Roue[NOMBRE_ROUES];
+                for (int i = 0; i < NOMBRE_ROUES; i++)
+                {
+                    this.sesRoues[i] = new Roue(_sesRoues[i]);
+                }
             }
+            else
+            {
+                throw new Exception("Une voiture doit avoir 4 roues");
+            }
+            
         }
 
         public bool Demarrer()
