@@ -14,16 +14,6 @@ namespace CL_CompteBancaire
         private int soldeEnDevise;
         private int decouvertAutoriseEnDevise;
 
-
-        public CompteBancaire(uint _id)
-        {
-            this.id = _id;
-            this.nomProprietaire = "";
-            this.devise = "";
-            this.soldeEnDevise = 0;
-            this.decouvertAutoriseEnDevise = 0;
-        }
-
         public CompteBancaire(uint _id, string _nomProprietaire, string _devise, int _soldeEnDevise, int _decouvertAutoriseEnDevise)
         {
             if (_decouvertAutoriseEnDevise <= 0)
@@ -38,6 +28,11 @@ namespace CL_CompteBancaire
             {
                 throw new Exception("Le découvert autorisé doit être négatif ou nul");
             }
+        }
+
+        public CompteBancaire(uint _id)
+            : this(_id, "", "", 0, 0)
+        {
         }
 
         public void Crediter(uint montantEnDevise)
