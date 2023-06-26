@@ -51,9 +51,7 @@ namespace CL_Point
 
         public void PermutateCoordinate()
         {
-            double temp = this.x;
-            this.x = this.y;
-            this.y = temp;
+            this.SetAt(this.y, this.x);
         }
 
         public override string ToString()
