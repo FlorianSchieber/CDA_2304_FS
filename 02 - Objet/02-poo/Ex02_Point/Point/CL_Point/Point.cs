@@ -46,7 +46,7 @@ namespace CL_Point
 
         public Point SymmetricAboutOrigin()
         {
-            return new Point(-this.x, -this.y);
+            return this.SymmetricAboutXAxis().SymmetricAboutYAxis();
         }
 
         public void PermutateCoordinate()

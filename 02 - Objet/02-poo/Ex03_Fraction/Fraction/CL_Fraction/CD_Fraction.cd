@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="CL_Point.Point">
-    <Position X="1.5" Y="1.25" Width="4.75" />
+  <Class Name="CL_Fraction.Fraction">
+    <Position X="2" Y="1" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>YAAACAAAAAAAAAAEAAgAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
-      <FileName>Point.cs</FileName>
+      <HashCode>AIAACAAAAAAIABAkYAcAAAABAAQAAAICACAAADEAAAA=</HashCode>
+      <FileName>Fraction.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
