@@ -45,13 +45,9 @@ namespace CL_Banque
 
         public bool AjouterCompte(uint _id, string _nomProprietaire, string _devise, int _soldeEnDevise, int _decouvertAutoriseEnDevise)
         {
-            if (!this.PossedeId(_id))
-            {
-                this.mesComptes.Add(new CompteBancaire(_id, _nomProprietaire, _devise, _soldeEnDevise, _decouvertAutoriseEnDevise));
-                return true;
-            }
+            CompteBancaire compteAAjouter = new CompteBancaire(_id, _nomProprietaire, _devise, _soldeEnDevise, _decouvertAutoriseEnDevise);
 
-            return false;
+            return AjouterCompte(compteAAjouter);
         }
 
         private bool AjouterCompte(CompteBancaire compteAAjouter)
@@ -122,6 +118,7 @@ namespace CL_Banque
         {
             string resultat = "Nom Banque : " + this.nom +
                 "\nVille Banque : " + this.ville + "\n";
+
             for (int indiceCompte = 0; indiceCompte < this.mesComptes.Count(); indiceCompte++)
             {
                 resultat += this.mesComptes[indiceCompte] + "\n";
