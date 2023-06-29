@@ -6,8 +6,7 @@ namespace Pj_Game421
     {
         static void Main(string[] args)
         {
-            Die d = new Die(1);
-            d.Roll();
+            Game g = new Game();
         }
     }
 }
