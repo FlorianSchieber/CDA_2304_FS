@@ -70,6 +70,18 @@ namespace CL_Game421
             return result;
         }
 
+        public List<uint> FacesToList()
+        {
+            List<uint> result = new List<uint> {};
+
+            for (int index = 0; index < this.dice.Count(); index++)
+            {
+                result.Add(this.dice[index].GetFaceNumber());
+            }
+
+            return result;
+        }
+
         public bool IsWon()
         {
             return this.HasFaces(new List<uint> { 4, 2, 1 });

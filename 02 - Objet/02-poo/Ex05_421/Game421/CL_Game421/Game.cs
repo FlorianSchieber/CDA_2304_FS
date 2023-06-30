@@ -15,15 +15,16 @@ namespace CL_Game421
 
         private Round currentRound;
 
-        private Game(uint _MAX_ROUNDS, uint _roundCount, Round _currentRound)
+        private Game(uint _MAX_ROUNDS, uint _roundCount, int _playerPoints,  Round _currentRound)
         {
             this.MAX_ROUNDS = _MAX_ROUNDS;
             this.roundCount = _roundCount;
+            this.playerPoints = _playerPoints;
             this.currentRound = _currentRound;
         }
 
         public Game(uint rounds)
-            : this(rounds, 10 * rounds,new Round())
+            : this(rounds, 0, (int)rounds * 10, new Round())
         {}
 
         public void Roll(List<int> diceIndexesToRoll)
@@ -36,6 +37,11 @@ namespace CL_Game421
             return this.currentRound.HasFaces(facesToCheck);
         }
 
+        public List<uint> FacesToList()
+        {
+            return this.currentRound.FacesToList();
+        }
+
         public bool CurrentRoundIsWon()
         {
             return this.currentRound.IsWon();
@@ -46,13 +52,24 @@ namespace CL_Game421
             return this.currentRound.IsOver();
         }
 
-        public bool NextRound()
+        public bool TryNextRound()
         {
-            if (this.CurrentRoundIsWon)
+            if (this.CurrentRoundIsWon() || this.CurrentRoundIsOver())
             {
-                this.playerPoints += 30;
+                if (this.CurrentRoundIsWon())
+                {
+                    this.playerPoints += 30;
+                }
+                else if (this.CurrentRoundIsOver())
+                {
+                    this.playerPoints -= 10;
+                }
+
+                this.currentRound = new Round();
+                return true;
             }
-            this.currentRound = new Round();
+
+            return false;
         }
 
         public bool PlayerHasPoints()
