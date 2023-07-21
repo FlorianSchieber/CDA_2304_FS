@@ -1,0 +1,27 @@
+CREATE DATABASE LDD_Ex1;
+
+USE LDD_Ex1;
+
+CREATE TABLE Personne(
+	id_Personne INTEGER AUTO_INCREMENT NOT NULL,
+	Nom VARCHAR(50) NOT NULL,
+	Prenom VARCHAR(50) NOT NULL,
+	No_rue INTEGER NOT NULL,
+	Rue VARCHAR(50) NOT NULL,
+	CP INTEGER NOT NULL,
+	Ville VARCHAR(50) NOT NULL,
+	
+	CONSTRAINT PK_id_Personne PRIMARY KEY (id_Personne),
+	CONSTRAINT Check_CP CHECK (CP < 96000)
+);
+
+CREATE TABLE Vehicule(
+	immatriculation INTEGER NOT NULL,
+	Marque VARCHAR(50) NOT NULL,
+	kilometrage INTEGER NOT NULL,
+	Date_mise_en_service DATE NOT NULL,
+	id_Personne INTEGER NOT NULL,
+	
+	CONSTRAINT PK_immatriculation PRIMARY KEY (immatriculation),
+	CONSTRAINT FK_Personne FOREIGN KEY (id_Personne) REFERENCES Personne(id_Personne)
+);
