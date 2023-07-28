@@ -1,9 +1,11 @@
+DROP DATABASE if EXISTS LDD_Ex1;
+
 CREATE DATABASE LDD_Ex1;
 
 USE LDD_Ex1;
 
-CREATE TABLE Personne(
-	id_Personne INTEGER AUTO_INCREMENT NOT NULL,
+CREATE TABLE Personnes(
+	id_Personne INTEGER NOT NULL AUTO_INCREMENT,
 	Nom VARCHAR(50) NOT NULL,
 	Prenom VARCHAR(50) NOT NULL,
 	No_rue INTEGER NOT NULL,
@@ -11,17 +13,23 @@ CREATE TABLE Personne(
 	CP INTEGER NOT NULL,
 	Ville VARCHAR(50) NOT NULL,
 	
-	CONSTRAINT PK_id_Personne PRIMARY KEY (id_Personne),
-	CONSTRAINT Check_CP CHECK (CP < 96000)
+	PRIMARY KEY (id_Personne)
 );
 
-CREATE TABLE Vehicule(
-	immatriculation INTEGER NOT NULL,
+CREATE TABLE Vehicules(
+	immatriculation INTEGER NOT NULL AUTO_INCREMENT,
 	Marque VARCHAR(50) NOT NULL,
 	kilometrage INTEGER NOT NULL,
 	Date_mise_en_service DATE NOT NULL,
 	id_Personne INTEGER NOT NULL,
 	
-	CONSTRAINT PK_immatriculation PRIMARY KEY (immatriculation),
-	CONSTRAINT FK_Personne FOREIGN KEY (id_Personne) REFERENCES Personne(id_Personne)
+	PRIMARY KEY (immatriculation)
 );
+
+ALTER TABLE Personnes
+	ADD CONSTRAINT CK_Personnes_CP CHECK (CP < 96000)
+;
+
+ALTER TABLE Vehicules
+	ADD CONSTRAINT FK_Personnes FOREIGN KEY (id_Personne) REFERENCES Personnes(id_Personne)
+;
