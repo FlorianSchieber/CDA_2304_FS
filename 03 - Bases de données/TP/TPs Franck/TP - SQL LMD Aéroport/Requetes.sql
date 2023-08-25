@@ -87,3 +87,5 @@ SELECT vols.VD, vols.VA
 FROM avions JOIN vols ON avions.AV = vols.AV
 	JOIN pilotes ON vols.PIL = pilotes.PIL
 WHERE avions.LOC = vols.VD AND vols.VA = pilotes.ADR;
+
+
