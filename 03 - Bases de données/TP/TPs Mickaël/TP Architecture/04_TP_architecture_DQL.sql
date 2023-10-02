@@ -7,10 +7,10 @@ CALL employes_selon_fonction('Administratif');
 CALL nombre_effectif_selon_fonction('Dessinateur', @nombre_effectif_dessinateur);
 SELECT @nombre_effectif_dessinateur;
 
-CALL projets_selon_employe('csaszar');
+CALL projets_selon_employe('neymar');
 
-CALL anciennete_employe('csaszar', @anciennete_stefan);
-SELECT @anciennete_stefan;
+CALL anciennete_employe('roussotte', @anciennete_roussotte);
+SELECT @anciennete_roussotte;
 
 SET @cumul_prix := 0;
 CALL ajouter_prix_selon_projet(1, @cumul_prix);

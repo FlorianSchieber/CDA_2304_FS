@@ -68,7 +68,7 @@ SELECT *
 FROM pilotes JOIN pilotes AS pilotes2
 	ON pilotes.PIL < pilotes2.PIL AND pilotes.ADR = pilotes2.ADR;
 
-/* Question 12 : noms des pilotes condisant un avion conduit par le pilote n°1 */
+/* Question 12 : noms des pilotes conduisant un avion conduit par le pilote n°1 */
 SELECT pilotes.PILNOM
 FROM (
 	SELECT vols.AV
@@ -87,5 +87,3 @@ SELECT vols.VD, vols.VA
 FROM avions JOIN vols ON avions.AV = vols.AV
 	JOIN pilotes ON vols.PIL = pilotes.PIL
 WHERE avions.LOC = vols.VD AND vols.VA = pilotes.ADR;
-
-

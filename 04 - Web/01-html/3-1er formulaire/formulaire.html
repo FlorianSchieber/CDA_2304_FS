@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon 1er fomulaire</title>
+</head>
+<body>
+    <h1>Formularie d'inscription</h1>
+    <h2>Votre compte configuré en 2 minutes !</h2>
+    <form action="formulaire.html" method="GET"> 
+        <fieldset>
+            <legend>État civil</legend>
+            <div>
+                <label for="nom">Nom :</label>
+                <input type="text" name="nom" id="nom" maxlength="100" size="20" >
+            </div>
+            <div>
+                <label for="prenom">Prénom :</label>
+                <input type="text" name="prenom" id="prenom" maxlength="100" size="20" >
+            </div>
+            <div>
+                <label for="datenaissance">Date de naissance :</label>
+                <input type="date" name="datenaissance" id="datenaissance">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Informations de contact</legend>
+            <div>
+                <label for="email">Adresse e-m@il :</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div>
+                <label for="tel">Téléphone :</label>
+                <input type="tel" name="tel" id="tel">
+            </div>
+        </fieldset>
+        <fieldset>
+            <div>
+                <input type="checkbox">
+                J'accepte les <a href="cdu.html">conditions d'utilisation</a>
+            </div>
+            <div>
+                <button type="submit">S'inscrire</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

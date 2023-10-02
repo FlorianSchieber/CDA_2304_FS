@@ -43,8 +43,7 @@ BEGIN
 END|
 
 -- 4) afficher la liste des projets (projet_ref, date de fin prevue, projet_prix) pour un nom d'employé donné
- 
- /*
+/* 
 CREATE PROCEDURE projets_selon_employe(IN in_emp_nom VARCHAR(50))
 BEGIN
 	SELECT projet_ref, projet_date_fin_prevue, projet_prix
@@ -63,6 +62,7 @@ BEGIN
 	WHERE emp_nom = in_emp_nom;
 END|
 */
+
 
 CREATE PROCEDURE projets_selon_employe(IN in_emp_nom VARCHAR(50))
 BEGIN

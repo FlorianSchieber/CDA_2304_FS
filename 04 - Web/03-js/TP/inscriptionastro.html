@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="inscriptionastro.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>EVALUATION COURS JAVASCRIPT</h1>
+        <h2>Formulaire avec traitement JavaScript</h2>
+
+        <p>Texte libre</p>
+        <textarea name="texte" id="texte" cols="30" rows="10"></textarea>
+
+        <form action="#" method="">
+            <section>
+                <label for="nom">Nom utilisateur</label>
+                <input type="text" name="nom" id="nom">
+            </section>
+
+            <section>            
+                <label for="prenom">Prénom</label>
+                <input type="text" name="prenom" id="prenom">
+            </section>
+
+            <section>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+            </section>
+
+            <section>
+                <label for="datenaissance">Date de naissance</label>
+                <input type="date" name="datenaissance" id="datenaissance">
+            </section>
+
+            <section>
+                <label for="pseudo">Affichage de votre Pseudo :</label>
+                <input type="text" name="pseudo" id="pseudo" readonly="true">
+            </section>
+
+            <section>
+                <button id="valider" type="button" disabled="true">Validation</button>
+                <button id="annuler" type="reset">Annuler</button>
+            </section>
+        </form>
+    </main>
+</body>
+</html>
