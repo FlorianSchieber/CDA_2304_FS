@@ -1,4 +1,14 @@
 ///////////////////////////////////////////////////
+// DECLARATION OBJETS
+
+const inputs = document.querySelectorAll("input");
+const inputNom = document.getElementById("nom");
+const inputPrenom = document.getElementById("prenom");
+const inputDateNaissance = document.getElementById("datenaissance");
+const inputPseudo = document.getElementById("pseudo");
+const boutonValider = document.getElementById("valider");
+
+///////////////////////////////////////////////////
 // DECLARATION FONCTIONS
 
 function valNum(_chaine) {
@@ -13,6 +23,7 @@ function valNum(_chaine) {
     }
 
     return somme;
+
 }
 
 function signeAstro(_mois) {
@@ -24,8 +35,6 @@ function signeAstro(_mois) {
 }
 
 function formOk() {
-
-    let inputs = document.querySelectorAll("input");
     
     let renseignes = true;
 
@@ -59,52 +68,49 @@ function creerCookie(_cle, _valeur) {
     dateExpiration = dateExpiration.toUTCString();
 
     document.cookie = _cle + " = " + _valeur + "; expires = " + dateExpiration + "; secure; SameSite = lax";
+    
 }
 
 function valider() {
-    
-    let inputs = document.querySelectorAll("input");
+
     inputs.forEach(element => {creerCookie(element.id, element.value)});
 
 }
 
 function nbJoursAnniv() {
 
+    let dateNaissance = new Date(inputDateNaissance.value);
+    let dateAujourdhui = new Date();
     
+    let differenceMs = dateNaissance.getTime() - dateAujourdhui.getTime();
 
 }
-
-
-/// TESTS
-
-
 
 ///////////////////////////////////////////////////
 // EXECUTION
 
-let inputs = document.querySelectorAll("input");
-
 inputs.forEach(element => {
     element.addEventListener("input", () => {
+
         if(formOk()) {
 
-            let dateNaissance = new Date(document.getElementById("datenaissance").value);
-            let nom = document.getElementById("nom").value;
-            let prenom = document.getElementById("prenom").value;
+            let dateNaissance = new Date(inputDateNaissance.value);
+            let nom = inputNom.value;
+            let prenom = inputPrenom.value;
 
-            document.getElementById("pseudo").value = calculerPseudo(dateNaissance, nom, prenom);
+            inputPseudo.value = calculerPseudo(dateNaissance, nom, prenom);
 
-            document.getElementById("valider").disabled = false;
+            boutonValider.disabled = false;
+
         }
         else {
 
-            document.getElementById("valider").disabled = true;
+            boutonValider.disabled = true;
 
         }
+
     })
 });
-
-let boutonValider = document.getElementById("valider");
 
 boutonValider.addEventListener("click", () => {
     valider();
