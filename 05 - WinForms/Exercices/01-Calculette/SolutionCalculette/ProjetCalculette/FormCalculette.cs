@@ -26,5 +26,10 @@ namespace ProjetCalculette
         {
 
         }
+
+        private void FormCalculette_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

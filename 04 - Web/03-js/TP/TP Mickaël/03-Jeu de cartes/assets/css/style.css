@@ -1,0 +1,30 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+table {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+thead tr {
+    background-color: #CCCCCC;    
+}
+
+tbody tr {
+    border: 1px solid #AAAAAA;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #EEEEEE;
+}
+
+
+th {
+    padding: 10px;
+    border: 1px solid #AAAAAA;
+}
+
+td {
+    padding: 10px;
+}

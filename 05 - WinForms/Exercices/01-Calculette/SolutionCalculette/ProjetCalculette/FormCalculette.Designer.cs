@@ -28,30 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            buttonValidate = new Button();
-            SuspendLayout();
+            this.buttonValidate = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // buttonValidate
             // 
-            buttonValidate.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonValidate.Location = new Point(554, 319);
-            buttonValidate.Name = "buttonValidate";
-            buttonValidate.Size = new Size(75, 23);
-            buttonValidate.TabIndex = 0;
-            buttonValidate.Text = "Valider";
-            buttonValidate.UseVisualStyleBackColor = true;
-            buttonValidate.Click += buttonValidate_Click;
+            this.buttonValidate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonValidate.Location = new System.Drawing.Point(597, 426);
+            this.buttonValidate.Name = "buttonValidate";
+            this.buttonValidate.Size = new System.Drawing.Size(75, 23);
+            this.buttonValidate.TabIndex = 0;
+            this.buttonValidate.Text = "Valider";
+            this.buttonValidate.UseVisualStyleBackColor = true;
             // 
             // FormCalculette
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(641, 354);
-            Controls.Add(buttonValidate);
-            Name = "FormCalculette";
-            Text = "FormCalculette";
-            Load += FormCalculette_Load;
-            ResumeLayout(false);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(684, 461);
+            this.Controls.Add(this.buttonValidate);
+            this.MinimumSize = new System.Drawing.Size(100, 100);
+            this.Name = "FormCalculette";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FormCalculette";
+            this.Load += new System.EventHandler(this.FormCalculette_Load_1);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
