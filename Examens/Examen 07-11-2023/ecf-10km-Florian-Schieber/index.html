@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/main.js" type="module"></script>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <main id="app">
+        <h1>Résultat de la course</h1>
+        <div id="stats">
+            <p>{{ nombreParticipants }} participants</p>
+            <p v-if="nombreParticipants > 0">Gagnant : {{ nomCompletGagnant }}</p>
+        </div>
+
+        <h2>Filtrer</h2>
+        <div id="filtres">
+            <span v-for="pays of listePays">
+                <input type="checkbox" name="{{ pays.nom }}" id=" {{ pays.nom }}" v-model="pays.coche" @change="filtrer()">
+                <label for="{{ pays.nom }}">{{ pays.nom }}</label>
+            </span>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Pays</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Temps final</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="participant of participantsFiltres">
+                    <td>{{ participant.pays }}</td>
+                    <td>{{ participant.nom }}</td>
+                    <td>{{ participant.prenom }}</td>
+                    <td>{{ participant.minutes }}min{{ participant.secondes}}sec</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
