@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             textBoxName = new TextBox();
             labelName = new Label();
             labelDate = new Label();
@@ -40,6 +41,14 @@
             buttonErase = new Button();
             labelDateTip = new Label();
             labelCurrency = new Label();
+            errorProviderName = new ErrorProvider(components);
+            errorProviderDate = new ErrorProvider(components);
+            errorProviderAmount = new ErrorProvider(components);
+            errorProviderZipcode = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProviderName).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderDate).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderAmount).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderZipcode).BeginInit();
             SuspendLayout();
             // 
             // textBoxName
@@ -49,7 +58,7 @@
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(178, 23);
             textBoxName.TabIndex = 0;
-            textBoxName.TextChanged += textBox_TextChanged;
+            textBoxName.TextChanged += textBoxName_TextChanged;
             textBoxName.Leave += textBoxName_Leave;
             // 
             // labelName
@@ -76,7 +85,7 @@
             textBoxDate.Name = "textBoxDate";
             textBoxDate.Size = new Size(100, 23);
             textBoxDate.TabIndex = 3;
-            textBoxDate.TextChanged += textBox_TextChanged;
+            textBoxDate.TextChanged += textBoxDate_TextChanged;
             textBoxDate.Leave += textBoxDate_Leave;
             // 
             // textBoxAmount
@@ -85,7 +94,7 @@
             textBoxAmount.Name = "textBoxAmount";
             textBoxAmount.Size = new Size(100, 23);
             textBoxAmount.TabIndex = 4;
-            textBoxAmount.TextChanged += textBox_TextChanged;
+            textBoxAmount.TextChanged += textBoxAmount_TextChanged;
             textBoxAmount.Leave += textBoxAmount_Leave;
             // 
             // textBoxZipcode
@@ -94,7 +103,7 @@
             textBoxZipcode.Name = "textBoxZipcode";
             textBoxZipcode.Size = new Size(100, 23);
             textBoxZipcode.TabIndex = 5;
-            textBoxZipcode.TextChanged += textBox_TextChanged;
+            textBoxZipcode.TextChanged += textBoxZipcode_TextChanged;
             textBoxZipcode.Leave += textBoxZipcode_Leave;
             // 
             // labelAmount
@@ -156,6 +165,22 @@
             labelCurrency.TabIndex = 11;
             labelCurrency.Text = "€";
             // 
+            // errorProviderName
+            // 
+            errorProviderName.ContainerControl = this;
+            // 
+            // errorProviderDate
+            // 
+            errorProviderDate.ContainerControl = this;
+            // 
+            // errorProviderAmount
+            // 
+            errorProviderAmount.ContainerControl = this;
+            // 
+            // errorProviderZipcode
+            // 
+            errorProviderZipcode.ContainerControl = this;
+            // 
             // FormTransactions
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -179,6 +204,10 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormTransactions";
             Load += FormTransactions_Load;
+            ((System.ComponentModel.ISupportInitialize)errorProviderName).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderDate).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderAmount).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderZipcode).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -197,5 +226,9 @@
         private Button buttonErase;
         private Label labelDateTip;
         private Label labelCurrency;
+        private ErrorProvider errorProviderName;
+        private ErrorProvider errorProviderDate;
+        private ErrorProvider errorProviderAmount;
+        private ErrorProvider errorProviderZipcode;
     }
 }

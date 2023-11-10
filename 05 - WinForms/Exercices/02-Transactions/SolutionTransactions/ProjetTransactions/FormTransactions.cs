@@ -26,63 +26,101 @@ namespace ProjetTransactions
 
         private void textBoxName_Leave(object sender, EventArgs e)
         {
-            string name = this.textBoxName.Text;
-
-            if (name.Length > 0 && !Verifier.IsCorrectName(name))
+            if (this.NameIsInvalid())
             {
-                MessageBox.Show(
-                    "Veuillez entrer un nom valide",
-                    "Erreur",
-                    MessageBoxButtons.OK
-                    );
+                this.errorProviderName.SetError(this.textBoxName, "Le nom est invalide");
             }
         }
 
         private void textBoxDate_Leave(object sender, EventArgs e)
         {
-            string date = this.textBoxDate.Text;
-
-            if (date.Length > 0 && !Verifier.IsCorrectDate(date))
+            if (this.DateIsInvalid())
             {
-                MessageBox.Show(
-                    "Veuillez entrer une date valide",
-                    "Erreur",
-                    MessageBoxButtons.OK
-                    );
+                this.errorProviderDate.SetError(this.labelDateTip, "La date est invalide");
             }
         }
 
         private void textBoxAmount_Leave(object sender, EventArgs e)
         {
-            string amount = this.textBoxAmount.Text;
-
-            if (amount.Length > 0 && !Verifier.IsCorrectAmount(amount))
+            if (this.AmountIsInvalid())
             {
-                MessageBox.Show(
-                    "Veuillez entrer un montant valide",
-                    "Erreur",
-                    MessageBoxButtons.OK
-                    );
+                this.errorProviderAmount.SetError(this.labelCurrency, "Le montant est invalide");
             }
         }
 
         private void textBoxZipcode_Leave(object sender, EventArgs e)
         {
-            string zipcode = this.textBoxZipcode.Text;
-
-            if (zipcode.Length > 0 && !Verifier.IsCorrectZipcode(zipcode))
+            if (this.ZipcodeIsInvalid())
             {
-                MessageBox.Show(
-                    "Veuillez entrer un code postal valide",
-                    "Erreur",
-                    MessageBoxButtons.OK
-                    );
+                this.errorProviderZipcode.SetError(this.textBoxZipcode, "Le code postal est invalide");
             }
         }
 
-        private void textBox_TextChanged(object sender, EventArgs e)
+        private void textBoxName_TextChanged(object sender, EventArgs e)
         {
+            if (!this.NameIsInvalid())
+            {
+                this.errorProviderName.SetError(this.textBoxName, "");
+            }
             this.VerifyButtonValidate();
+        }
+
+        private void textBoxDate_TextChanged(object sender, EventArgs e)
+        {
+            if (!this.DateIsInvalid())
+            {
+                this.errorProviderDate.SetError(this.labelDateTip, "");
+            }
+            this.VerifyButtonValidate();
+        }
+
+        private void textBoxAmount_TextChanged(object sender, EventArgs e)
+        {
+            if (!this.AmountIsInvalid())
+            {
+                this.errorProviderAmount.SetError(this.labelCurrency, "");
+            }
+            this.VerifyButtonValidate();
+        }
+
+        private void textBoxZipcode_TextChanged(object sender, EventArgs e)
+        {
+            if (!this.ZipcodeIsInvalid())
+            {
+                this.errorProviderZipcode.SetError(this.textBoxZipcode, "");
+            }
+            this.VerifyButtonValidate();
+        }
+
+        private void buttonErase_Click(object sender, EventArgs e)
+        {
+            this.Erase(this.textBoxName);
+            this.Erase(this.textBoxDate);
+            this.Erase(this.textBoxAmount);
+            this.Erase(this.textBoxZipcode);
+
+            this.errorProviderName.SetError(this.textBoxName, "");
+            this.errorProviderDate.SetError(this.labelDateTip, "");
+            this.errorProviderAmount.SetError(this.labelCurrency, "");
+            this.errorProviderZipcode.SetError(this.textBoxZipcode, "");
+
+            this.VerifyButtonValidate();
+        }
+
+        private void buttonValidate_Click(object sender, EventArgs e)
+        {
+            if (this.TransactionIsSendable())
+            {
+
+                // Ouvrir fenêtre de confirmation
+
+            }
+        }
+
+        private bool NameIsInvalid()
+        {
+            string name = this.textBoxName.Text;
+            return name.Length > 0 && !Verifier.IsCorrectName(name);
         }
 
         private bool NameIsSendable()
@@ -91,16 +129,34 @@ namespace ProjetTransactions
             return name.Length > 0 && Verifier.IsCorrectName(name);
         }
 
+        private bool DateIsInvalid()
+        {
+            string date = this.textBoxDate.Text;
+            return date.Length > 0 && !Verifier.IsCorrectDate(date);
+        }
+
         private bool DateIsSendable()
         {
             string date = this.textBoxDate.Text;
             return date.Length > 0 && Verifier.IsCorrectDate(date);
         }
 
+        private bool AmountIsInvalid()
+        {
+            string amount = this.textBoxAmount.Text;
+            return amount.Length > 0 && !Verifier.IsCorrectAmount(amount);
+        }
+
         private bool AmountIsSendable()
         {
             string amount = this.textBoxAmount.Text;
             return amount.Length > 0 && Verifier.IsCorrectAmount(amount);
+        }
+
+        private bool ZipcodeIsInvalid()
+        {
+            string zipcode = this.textBoxZipcode.Text;
+            return zipcode.Length > 0 && !Verifier.IsCorrectZipcode(zipcode);
         }
 
         private bool ZipcodeIsSendable()
@@ -133,29 +189,9 @@ namespace ProjetTransactions
 
         }
 
-        private void buttonErase_Click(object sender, EventArgs e)
-        {
-            this.Erase(this.textBoxName);
-            this.Erase(this.textBoxDate);
-            this.Erase(this.textBoxAmount);
-            this.Erase(this.textBoxZipcode);
-
-            this.VerifyButtonValidate();
-        }
-
         private void Erase(TextBox _textBox)
         {
             _textBox.Text = "";
-        }
-
-        private void buttonValidate_Click(object sender, EventArgs e)
-        {
-            if (this.TransactionIsSendable())
-            {
-
-                // Ouvrir fenêtre de confirmation
-
-            }
         }
     }
 }

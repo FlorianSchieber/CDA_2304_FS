@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
+using System.Globalization;
 
 namespace CL_Verifier
 {
@@ -24,23 +25,17 @@ namespace CL_Verifier
 
         public static bool IsCorrectDate(string _date)
         {
-            const string REGEX_PATTERN = @"^(\d){2}\/(\d){2}\/(\d){4}";
 
-            Regex regex = new Regex(REGEX_PATTERN);
+            string[] formats = { "dd/MM/yyyy" };
+            DateTime dateTime;
 
-            if (regex.Match(_date).Success)
-            {
-                string[] formats = { "dd/MM/yyyy", "HHmmss" };
-                DateTime dateTime;
-
-                return DateTime.TryParseExact(_date, formats, null,
-                               System.Globalization.DateTimeStyles.AllowWhiteSpaces |
-                               System.Globalization.DateTimeStyles.AdjustToUniversal,
-                               out dateTime);
-
-            }
-
-            return false;
+            return DateTime.TryParseExact(
+                _date,
+                formats,
+                null,
+                DateTimeStyles.None,
+                out dateTime
+            );
 
         }
 
