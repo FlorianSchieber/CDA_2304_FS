@@ -1,3 +1,7 @@
+using CL_Transaction;
+using CL_Serializer;
+using System.Runtime.Serialization.Formatters.Binary;
+
 namespace ProjetTransactions
 {
     internal static class Program
@@ -11,7 +15,20 @@ namespace ProjetTransactions
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormTransactions());
+
+            List<Transaction> transactions = new List<Transaction> { };
+
+            FormTransactions createFT = new FormTransactions();
+            Application.Run(createFT);
+            transactions.Add(createFT.CurrentTransaction);
+
+            Serializer.Serialize(transactions[0]);
+            transactions.Add(Serializer.Unserialize());
+
+
+            FormTransactions editFT = new FormTransactions(transactions[1]);
+            Application.Run(editFT);
+            
         }
     }
 }

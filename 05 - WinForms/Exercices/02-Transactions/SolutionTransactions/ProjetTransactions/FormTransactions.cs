@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -9,15 +8,32 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using CL_Verifier;
+using CL_Transaction;
+using System.Globalization;
 
 namespace ProjetTransactions
 {
     public partial class FormTransactions : Form
     {
+        private Transaction currentTransaction;
+
         public FormTransactions()
         {
             InitializeComponent();
+            this.currentTransaction = null;
         }
+
+        public FormTransactions(Transaction _currentTransaction)
+        {
+            InitializeComponent();
+            this.currentTransaction = _currentTransaction;
+            this.textBoxName.Text = this.currentTransaction.Name;
+            this.textBoxDate.Text = Verifier.DateToString(this.currentTransaction.Date);
+            this.textBoxAmount.Text = Verifier.AmountToString(this.currentTransaction.Amount);
+            this.textBoxZipcode.Text = this.currentTransaction.Zipcode;
+        }
+
+        public Transaction CurrentTransaction { get => this.currentTransaction; }
 
         private void FormTransactions_Load(object sender, EventArgs e)
         {
@@ -26,78 +42,120 @@ namespace ProjetTransactions
 
         private void textBoxName_Leave(object sender, EventArgs e)
         {
-            if (this.NameIsInvalid())
+            string name = this.textBoxName.Text;
+
+            if (Verifier.IsEmpty(name))
             {
-                this.errorProviderName.SetError(this.textBoxName, "Le nom est invalide");
+                this.errorProviderName.SetError(this.textBoxName, "Le nom est obligatoire");
             }
+            else if (Verifier.IsValidName(name))
+            {
+                if (!Verifier.IsShortName(name))
+                {
+                    this.errorProviderName.SetError(this.textBoxName, "Le nom doit faire 30 caractères maximum");
+                }
+            }
+            else
+            {
+                this.errorProviderName.SetError(this.textBoxName, "Le nom n'est pas au bon format");
+            }
+
+            this.VerifyButtonValidate();
         }
 
         private void textBoxDate_Leave(object sender, EventArgs e)
         {
-            if (this.DateIsInvalid())
+            string dateString = this.textBoxDate.Text;
+
+            if (Verifier.IsEmpty(dateString))
             {
-                this.errorProviderDate.SetError(this.labelDateTip, "La date est invalide");
+                this.errorProviderDate.SetError(this.labelDateTip, "La date est obligatoire");
             }
+            else if (Verifier.IsValidDate(dateString))
+            {
+                DateTime tempDate = Verifier.ToDate(dateString);
+
+                if (!Verifier.IsFutureDate(tempDate))
+                {
+                    this.errorProviderDate.SetError(this.labelDateTip, "La date doit être dans le futur");
+                }
+            }
+            else
+            {
+                this.errorProviderDate.SetError(this.labelDateTip, "La date n'est pas au bon format");
+            }
+
+            this.VerifyButtonValidate();
         }
 
         private void textBoxAmount_Leave(object sender, EventArgs e)
         {
-            if (this.AmountIsInvalid())
+            string amountString = this.textBoxAmount.Text;
+
+            if (Verifier.IsEmpty(amountString))
             {
-                this.errorProviderAmount.SetError(this.labelCurrency, "Le montant est invalide");
+                this.errorProviderAmount.SetError(this.labelCurrency, "Le montant est obligatoire");
             }
+            else if (Verifier.IsValidAmount(amountString))
+            {
+                double tempAmount = Verifier.ToAmount(amountString);
+
+                if (Verifier.IsNegative(tempAmount))
+                {
+                    this.errorProviderAmount.SetError(this.labelCurrency, "Le montant doit être positif");
+                }
+            }
+            else
+            {
+                this.errorProviderAmount.SetError(this.labelCurrency, "Le montant n'est pas au bon format");
+            }
+
+            this.VerifyButtonValidate();
         }
 
         private void textBoxZipcode_Leave(object sender, EventArgs e)
         {
-            if (this.ZipcodeIsInvalid())
+            string zipcode = this.textBoxZipcode.Text;
+
+            if (Verifier.IsEmpty(zipcode))
             {
-                this.errorProviderZipcode.SetError(this.textBoxZipcode, "Le code postal est invalide");
+                this.errorProviderZipcode.SetError(this.textBoxZipcode, "Le code postal est obligatoire");
             }
+            else if (!Verifier.IsValidZipcode(zipcode))
+            {
+                this.errorProviderZipcode.SetError(this.textBoxZipcode, "Le code postal n'est pas au bon format");
+            }
+
+            this.VerifyButtonValidate();
         }
 
         private void textBoxName_TextChanged(object sender, EventArgs e)
         {
-            if (!this.NameIsInvalid())
-            {
-                this.errorProviderName.SetError(this.textBoxName, "");
-            }
+            this.errorProviderName.SetError(this.textBoxName, "");
             this.VerifyButtonValidate();
         }
 
         private void textBoxDate_TextChanged(object sender, EventArgs e)
         {
-            if (!this.DateIsInvalid())
-            {
-                this.errorProviderDate.SetError(this.labelDateTip, "");
-            }
+            this.errorProviderDate.SetError(this.labelDateTip, "");
             this.VerifyButtonValidate();
         }
 
         private void textBoxAmount_TextChanged(object sender, EventArgs e)
         {
-            if (!this.AmountIsInvalid())
-            {
-                this.errorProviderAmount.SetError(this.labelCurrency, "");
-            }
+            this.errorProviderAmount.SetError(this.labelCurrency, "");
             this.VerifyButtonValidate();
         }
 
         private void textBoxZipcode_TextChanged(object sender, EventArgs e)
         {
-            if (!this.ZipcodeIsInvalid())
-            {
-                this.errorProviderZipcode.SetError(this.textBoxZipcode, "");
-            }
+            this.errorProviderZipcode.SetError(this.textBoxZipcode, "");
             this.VerifyButtonValidate();
         }
 
         private void buttonErase_Click(object sender, EventArgs e)
         {
-            this.Erase(this.textBoxName);
-            this.Erase(this.textBoxDate);
-            this.Erase(this.textBoxAmount);
-            this.Erase(this.textBoxZipcode);
+            this.EraseTextBoxes();
 
             this.errorProviderName.SetError(this.textBoxName, "");
             this.errorProviderDate.SetError(this.labelDateTip, "");
@@ -111,68 +169,90 @@ namespace ProjetTransactions
         {
             if (this.TransactionIsSendable())
             {
+                string name = this.textBoxName.Text;
+                string dateString = this.textBoxDate.Text;
+                string amountString = this.textBoxAmount.Text;
+                string zipcode = this.textBoxZipcode.Text;
 
-                // Ouvrir fenêtre de confirmation
+                if (this.TransactionIsSendable())
+                {
+                    CL_Transaction.Transaction newTransaction = new CL_Transaction.Transaction(name, dateString, amountString, zipcode);
 
+                    this.currentTransaction = newTransaction;
+
+                    MessageBox.Show(newTransaction.ToString(), "Succès", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    this.EraseTextBoxes();
+                }
             }
-        }
-
-        private bool NameIsInvalid()
-        {
-            string name = this.textBoxName.Text;
-            return name.Length > 0 && !Verifier.IsCorrectName(name);
         }
 
         private bool NameIsSendable()
         {
             string name = this.textBoxName.Text;
-            return name.Length > 0 && Verifier.IsCorrectName(name);
-        }
+            if (!Verifier.IsEmpty(name))
+            {
+                if (Verifier.IsValidName(name))
+                {
+                    return Verifier.IsShortName(name);
+                }
+            }
 
-        private bool DateIsInvalid()
-        {
-            string date = this.textBoxDate.Text;
-            return date.Length > 0 && !Verifier.IsCorrectDate(date);
+            return false;
         }
 
         private bool DateIsSendable()
         {
-            string date = this.textBoxDate.Text;
-            return date.Length > 0 && Verifier.IsCorrectDate(date);
-        }
+            string dateString = this.textBoxDate.Text;
+            if (!Verifier.IsEmpty(dateString))
+            {
+                if (Verifier.IsValidDate(dateString))
+                {
+                    DateTime tempDate = Verifier.ToDate(dateString);
 
-        private bool AmountIsInvalid()
-        {
-            string amount = this.textBoxAmount.Text;
-            return amount.Length > 0 && !Verifier.IsCorrectAmount(amount);
+                    return Verifier.IsFutureDate(tempDate);
+                }
+            }
+
+            return false;
         }
 
         private bool AmountIsSendable()
         {
-            string amount = this.textBoxAmount.Text;
-            return amount.Length > 0 && Verifier.IsCorrectAmount(amount);
-        }
+            string amountString = this.textBoxAmount.Text;
 
-        private bool ZipcodeIsInvalid()
-        {
-            string zipcode = this.textBoxZipcode.Text;
-            return zipcode.Length > 0 && !Verifier.IsCorrectZipcode(zipcode);
+            if (!Verifier.IsEmpty(amountString))
+            {
+                if (Verifier.IsValidAmount(amountString))
+                {
+                    double tempAmount = Verifier.ToAmount(amountString);
+
+                    return !Verifier.IsNegative(tempAmount);
+                }
+            }
+
+            return false;
         }
 
         private bool ZipcodeIsSendable()
         {
             string zipcode = this.textBoxZipcode.Text;
-            return zipcode.Length > 0 && Verifier.IsCorrectZipcode(zipcode);
+
+            if (!Verifier.IsEmpty(zipcode))
+            {
+                return Verifier.IsValidZipcode(zipcode);
+            }
+
+            return false;
         }
 
         private bool TransactionIsSendable()
         {
-            return (
+            return
                 NameIsSendable() &&
                 DateIsSendable() &&
                 AmountIsSendable() &&
-                ZipcodeIsSendable()
-                );
+                ZipcodeIsSendable();
         }
 
         private void VerifyButtonValidate()
@@ -189,9 +269,21 @@ namespace ProjetTransactions
 
         }
 
-        private void Erase(TextBox _textBox)
+        private void EraseTextBoxes()
         {
-            _textBox.Text = "";
+            textBoxName.Text = "";
+            textBoxDate.Text = "";
+            textBoxAmount.Text = "";
+            textBoxZipcode.Text = "";
+        }
+
+        private void FormTransactions_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Voulez-vous fermer l'application ?", "Fin d'application", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
