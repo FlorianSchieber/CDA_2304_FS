@@ -22,8 +22,8 @@ namespace ProjetTransactions
             Application.Run(createFT);
             transactions.Add(createFT.CurrentTransaction);
 
-            Serializer.Serialize(transactions[0]);
-            transactions.Add(Serializer.Unserialize());
+            Serializer.JsonSerialize(transactions[0]);
+            transactions.Add(Serializer.JsonDeserialize());
 
 
             FormTransactions editFT = new FormTransactions(transactions[1]);

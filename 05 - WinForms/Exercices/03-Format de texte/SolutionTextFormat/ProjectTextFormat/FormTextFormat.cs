@@ -19,6 +19,100 @@ namespace ProjectTextFormat
 
         private void textBox_TextChanged(object sender, EventArgs e)
         {
+            this.RefreshCheckBoxes();
+            this.FormatText();
+        }
+
+        private void checkBox_CheckedChange(object sender, EventArgs e)
+        {
+            this.RefreshRadioButtons();
+            this.FormatText();
+        }
+
+        private void radioButton_CheckedChange(object sender, EventArgs e)
+        {
+            this.FormatText();
+        }
+
+        private void FormatText()
+        {
+            // Coloration du fond
+            #region fond
+            if (this.checkBoxBackgroundColor.Checked)
+            {
+                if (this.radioButtonBackgroundRed.Checked)
+                {
+                    this.textBoxOutput.BackColor = System.Drawing.Color.Red;
+                }
+                else if (this.radioButtonBackgroundGreen.Checked)
+                {
+                    this.textBoxOutput.BackColor = System.Drawing.Color.Green;
+                }
+                else if (this.radioButtonBackgroundBlue.Checked)
+                {
+                    this.textBoxOutput.BackColor = System.Drawing.Color.Blue;
+                }
+                else
+                {
+                    this.textBoxOutput.BackColor = SystemColors.Control;
+                }
+            }
+            else
+            {
+                this.textBoxOutput.BackColor = SystemColors.Control;
+            }
+            #endregion
+            // Coloration de la police
+
+            if (this.checkBoxFontColor.Checked)
+            {
+                if (this.radioButtonFontRed.Checked)
+                {
+                    this.textBoxOutput.ForeColor = System.Drawing.Color.Red;
+                }
+                else if (this.radioButtonFontWhite.Checked)
+                {
+                    this.textBoxOutput.ForeColor = System.Drawing.Color.White;
+                }
+                else if (this.radioButtonFontBlack.Checked)
+                {
+                    this.textBoxOutput.ForeColor = System.Drawing.Color.Black;
+                }
+                else
+                {
+                    this.textBoxOutput.ForeColor = SystemColors.WindowText;
+                }
+            }
+            else
+            {
+                this.textBoxOutput.ForeColor = SystemColors.WindowText;
+            }
+
+            // Mise à la casse
+            
+            if (this.checkBoxCase.Checked)
+            {
+                if (this.radioButtonLowerCase.Checked)
+                {
+                    this.textBoxOutput.Text = this.textBox.Text.ToLower();
+                }
+                else if (this.radioButtonUpperCase.Checked)
+                {
+                    this.textBoxOutput.Text = this.textBox.Text.ToUpper();
+                }
+                else
+                {
+                    this.textBoxOutput.Text = this.textBox.Text;
+                }
+            }
+            else
+            {
+                this.textBoxOutput.Text = this.textBox.Text;
+            }
+        }
+
+        private void RefreshCheckBoxes()
+        {
             if (this.textBox.Text.Length > 0)
             {
                 this.groupBoxChoice.Enabled = true;
@@ -30,6 +124,13 @@ namespace ProjectTextFormat
                 this.checkBoxCase.Checked = false;
                 this.groupBoxChoice.Enabled = false;
             }
+        }
+
+        private void RefreshRadioButtons()
+        {
+            this.groupBoxBackgroundColor.Visible = this.checkBoxBackgroundColor.Checked;
+            this.groupBoxFontColor.Visible = this.checkBoxFontColor.Checked;
+            this.groupBoxCase.Visible = this.checkBoxCase.Checked;
         }
     }
 }
