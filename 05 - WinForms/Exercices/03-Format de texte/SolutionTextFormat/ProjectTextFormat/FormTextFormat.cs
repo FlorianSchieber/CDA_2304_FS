@@ -36,8 +36,7 @@ namespace ProjectTextFormat
 
         private void FormatText()
         {
-            // Coloration du fond
-            #region fond
+            #region background
             if (this.checkBoxBackgroundColor.Checked)
             {
                 if (this.radioButtonBackgroundRed.Checked)
@@ -62,8 +61,8 @@ namespace ProjectTextFormat
                 this.textBoxOutput.BackColor = SystemColors.Control;
             }
             #endregion
-            // Coloration de la police
 
+            #region font color
             if (this.checkBoxFontColor.Checked)
             {
                 if (this.radioButtonFontRed.Checked)
@@ -87,9 +86,9 @@ namespace ProjectTextFormat
             {
                 this.textBoxOutput.ForeColor = SystemColors.WindowText;
             }
+            #endregion
 
-            // Mise à la casse
-            
+            #region case
             if (this.checkBoxCase.Checked)
             {
                 if (this.radioButtonLowerCase.Checked)
@@ -109,6 +108,7 @@ namespace ProjectTextFormat
             {
                 this.textBoxOutput.Text = this.textBox.Text;
             }
+            #endregion
         }
 
         private void RefreshCheckBoxes()
