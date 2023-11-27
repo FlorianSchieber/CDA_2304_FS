@@ -13,24 +13,36 @@ namespace ProjectCombo
 {
     public partial class FormCombo : Form
     {
-        private static List<string> countries = new List<String> {
-            "France",
-            "Belgique",
-            "Allemagne",
-            "Japon",
-            "Portugal",
-            "Grèce"
-        };
+        private Dictionary<string, bool> checkedCountries;
+
+        public FormCombo(Dictionary<string, bool> _checkedCountries)
+        {
+            InitializeComponent();
+            this.checkedCountries = _checkedCountries;
+
+            foreach (KeyValuePair<string, bool> checkedCountry in this.checkedCountries)
+            {
+                if (checkedCountry.Value)
+                {
+                    this.listBoxTarget.Items.Add(checkedCountry.Key);
+                }
+                else
+                {
+                    this.comboBoxSource.Items.Add(checkedCountry.Key);
+                }
+            }
+
+            this.ActualiseButtons();
+        }
 
         public FormCombo()
         {
             InitializeComponent();
-
-            foreach (string country in FormCombo.countries)
-            {
-                this.comboBoxSource.Items.Add(country);
-            }
+            this.checkedCountries = new Dictionary<string, bool> { };
+            this.ActualiseButtons();
         }
+
+        public Dictionary<string, bool> CheckedCountries { get { return this.checkedCountries; } }
 
         // Events
 
@@ -81,14 +93,31 @@ namespace ProjectCombo
 
         private void buttonUp_Click(object sender, EventArgs e)
         {
-            this.MoveUp();
+            this.MoveUpTargetCountry();
             this.ActualiseButtons();
         }
 
         private void buttonDown_Click(object sender, EventArgs e)
         {
-            this.MoveDown();
+            this.MoveDownTargetCountry();
             this.ActualiseButtons();
+        }
+
+        private void FormCombo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Dictionary<string, bool> outCheckedCountries = new Dictionary<string, bool> { };
+
+            for (int i = 0; i < this.comboBoxSource.Items.Count; i++)
+            {
+                outCheckedCountries.Add((string)this.comboBoxSource.Items[i], false);
+            }
+
+            for (int i = 0; i < this.listBoxTarget.Items.Count; i++)
+            {
+                outCheckedCountries.Add((string)this.listBoxTarget.Items[i], true);
+            }
+
+            this.checkedCountries = outCheckedCountries;
         }
 
         // Methods
@@ -124,9 +153,9 @@ namespace ProjectCombo
 
         private void RemoveCountry()
         {
-            if (this.TargetItemIsSelected())
+            if (this.TargetCountryIsSelected())
             {
-                string country = this.listBoxTarget.SelectedItem.ToString();
+                string country = (string)this.listBoxTarget.SelectedItem;
 
                 if (!this.IsInSource(country))
                 {
@@ -149,38 +178,38 @@ namespace ProjectCombo
 
         private void ActualiseButtons()
         {
-            // Actuablise Adding Buttons
+            // Actualise Adding Buttons
             this.buttonAdd.Enabled = this.comboBoxSource.Text.Trim().Length > 0 && !this.IsInTarget(this.comboBoxSource.Text);
             this.buttonAddAll.Enabled = this.comboBoxSource.Items.Count > 0;
 
             // Actualise Removing Buttons
-            this.buttonRemove.Enabled = this.TargetItemIsSelected();
+            this.buttonRemove.Enabled = this.TargetCountryIsSelected();
             this.buttonRemoveAll.Enabled = !this.TargetIsEmpty();
 
             // Actualise Sorting Buttons
-            this.buttonUp.Enabled = this.TargetItemIsSelected() && !this.SelectedTargetItemIsTop();
-            this.buttonDown.Enabled = this.TargetItemIsSelected() && !this.SelectedTargetItemIsBottom();
+            this.buttonUp.Enabled = this.TargetCountryIsSelected() && !this.SelectedTargetCountryIsTop();
+            this.buttonDown.Enabled = this.TargetCountryIsSelected() && !this.SelectedTargetCountryIsBottom();
         }
 
-        private void MoveUp()
+        private void MoveUpTargetCountry()
         {
-            if (!this.SelectedTargetItemIsTop())
+            if (!this.SelectedTargetCountryIsTop())
             {
-                this.MoveItem(-1);
+                this.MoveTargetCountry(-1);
             }
         }
 
-        private void MoveDown()
+        private void MoveDownTargetCountry()
         {
-            if (!this.SelectedTargetItemIsBottom())
+            if (!this.SelectedTargetCountryIsBottom())
             {
-                this.MoveItem(1);
+                this.MoveTargetCountry(1);
             }
         }
 
-        private void MoveItem(int _step)
+        private void MoveTargetCountry(int _step)
         {
-            if (this.TargetItemIsSelected())
+            if (this.TargetCountryIsSelected())
             {
                 string country = (string)this.listBoxTarget.SelectedItem;
                 int oldIndex = this.listBoxTarget.SelectedIndex;
@@ -214,21 +243,19 @@ namespace ProjectCombo
             return this.listBoxTarget.Items.Count == 0;
         }
 
-        private bool TargetItemIsSelected()
+        private bool TargetCountryIsSelected()
         {
             return this.listBoxTarget.SelectedIndex != -1;
         }
 
-        private bool SelectedTargetItemIsTop()
+        private bool SelectedTargetCountryIsTop()
         {
             return this.listBoxTarget.SelectedIndex == 0;
         }
 
-        private bool SelectedTargetItemIsBottom()
+        private bool SelectedTargetCountryIsBottom()
         {
             return this.listBoxTarget.SelectedIndex == this.listBoxTarget.Items.Count - 1;
         }
-
-
     }
 }

@@ -163,7 +163,8 @@
             Controls.Add(labelSource);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormCombo";
-            Text = "FormCombo";
+            Text = "Sélection de pays";
+            FormClosing += FormCombo_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -18,7 +18,8 @@ namespace ProjectScrollBar
         public FormScrollBar()
         {
             InitializeComponent();
-            this.RefreshAllColors();
+            this.StoreColor();
+            this.DisplayAllColors();
         }
 
         // Events
@@ -27,79 +28,99 @@ namespace ProjectScrollBar
         {
             this.numericUpDownRed.Value = (decimal)this.hScrollBarRed.Value;
 
-            this.RefreshRed();
-            this.RefreshColor();
+            this.StoreColor();
+            this.DisplayRed();
+            this.DisplayColor();
         }
 
         private void numericUpDownRed_ValueChanged(object sender, EventArgs e)
         {
             this.hScrollBarRed.Value = (int)this.numericUpDownRed.Value;
-            this.RefreshRed();
-            this.RefreshColor();
+
+            this.StoreColor();
+            this.DisplayRed();
+            this.DisplayColor();
         }
 
         private void hScrollBarGreen_Scroll(object sender, ScrollEventArgs e)
         {
             this.numericUpDownGreen.Value = (decimal)this.hScrollBarGreen.Value;
-            this.RefreshGreen();
-            this.RefreshColor();
+
+            this.StoreColor();
+            this.DisplayGreen();
+            this.DisplayColor();
         }
 
         private void numericUpDownGreen_ValueChanged(object sender, EventArgs e)
         {
             this.hScrollBarGreen.Value = (int)this.numericUpDownGreen.Value;
-            this.RefreshGreen();
-            this.RefreshColor();
+
+            this.StoreColor();
+            this.DisplayGreen();
+            this.DisplayColor();
         }
 
         private void hScrollBarBlue_Scroll(object sender, ScrollEventArgs e)
         {
             this.numericUpDownBlue.Value = (decimal)this.hScrollBarBlue.Value;
-            this.RefreshBlue();
-            this.RefreshColor();
+
+            this.StoreColor();
+            this.DisplayBlue();
+            this.DisplayColor();
         }
 
         private void numericUpDownBlue_ValueChanged(object sender, EventArgs e)
         {
             this.hScrollBarBlue.Value = (int)this.numericUpDownBlue.Value;
-            this.RefreshBlue();
-            this.RefreshColor();
+
+            this.StoreColor();
+            this.DisplayBlue();
+            this.DisplayColor();
         }
 
         // Methods
 
-        private void RefreshRed()
+        private void StoreColor()
+        {
+            int redAmount = (int)this.numericUpDownRed.Value;
+            int greenAmount = (int)this.numericUpDownGreen.Value;
+            int blueAmount = (int)this.numericUpDownBlue.Value;
+
+            this.color = Color.FromArgb(redAmount, greenAmount, blueAmount);
+        }
+
+        private void DisplayRed()
         {
             int redAmount = (int)this.color.R;
 
             this.panelRed.BackColor = Color.FromArgb(redAmount, 0, 0);
         }
 
-        private void RefreshGreen()
+        private void DisplayGreen()
         {
             int greenAmount = (int)this.color.G;
 
             this.panelGreen.BackColor = Color.FromArgb(0, greenAmount, 0);
         }
 
-        private void RefreshBlue()
+        private void DisplayBlue()
         {
             int blueAmount = (int)this.color.B;
 
             this.panelBlue.BackColor = Color.FromArgb(0, 0, blueAmount);
         }
 
-        private void RefreshColor()
+        private void DisplayColor()
         {
             this.panelColor.BackColor = this.color;
         }
 
-        private void RefreshAllColors()
+        private void DisplayAllColors()
         {
-            this.RefreshRed();
-            this.RefreshGreen();
-            this.RefreshBlue();
-            this.RefreshColor();
+            this.DisplayRed();
+            this.DisplayGreen();
+            this.DisplayBlue();
+            this.DisplayColor();
         }
     }
 }

@@ -11,7 +11,27 @@ namespace ProjectCombo
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormCombo());
+
+            Dictionary<string, bool> startCheckedCountries = new Dictionary<string, bool>
+            {
+                { "France", false },
+                { "Belgique", false },
+                { "Allemagne", false },
+                { "Japon", false },
+                { "Portugal", false },
+                { "Grèce", false }
+            };
+
+            FormCombo creationForm = new FormCombo();
+
+            Application.Run(creationForm);
+
+            Dictionary<string, bool> editedCheckedCountries = creationForm.CheckedCountries;
+            FormCombo editionForm = new FormCombo(editedCheckedCountries);
+
+            Application.Run(editionForm);
+
+
         }
     }
 }

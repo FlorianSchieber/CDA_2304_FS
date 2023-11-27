@@ -182,7 +182,7 @@
             Controls.Add(labelRed);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormScrollBar";
-            Text = "FormScrollBar";
+            Text = "Couleurs";
             ((System.ComponentModel.ISupportInitialize)numericUpDownRed).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownGreen).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownBlue).EndInit();
