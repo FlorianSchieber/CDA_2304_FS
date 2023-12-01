@@ -18,7 +18,7 @@ namespace ProjectCombo
         public FormCombo(Dictionary<string, bool> _checkedCountries)
         {
             InitializeComponent();
-            this.checkedCountries = _checkedCountries;
+            this.checkedCountries = new Dictionary<string, bool> (_checkedCountries);
 
             foreach (KeyValuePair<string, bool> checkedCountry in this.checkedCountries)
             {

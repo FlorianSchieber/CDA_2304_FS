@@ -22,7 +22,7 @@ namespace ProjectCombo
                 { "Grèce", false }
             };
 
-            FormCombo creationForm = new FormCombo();
+            FormCombo creationForm = new FormCombo(startCheckedCountries);
 
             Application.Run(creationForm);
 

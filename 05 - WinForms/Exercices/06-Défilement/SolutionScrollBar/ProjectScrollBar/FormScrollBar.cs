@@ -29,8 +29,7 @@ namespace ProjectScrollBar
             this.numericUpDownRed.Value = (decimal)this.hScrollBarRed.Value;
 
             this.StoreColor();
-            this.DisplayRed();
-            this.DisplayColor();
+            this.DisplayAllColors();
         }
 
         private void numericUpDownRed_ValueChanged(object sender, EventArgs e)
@@ -38,8 +37,7 @@ namespace ProjectScrollBar
             this.hScrollBarRed.Value = (int)this.numericUpDownRed.Value;
 
             this.StoreColor();
-            this.DisplayRed();
-            this.DisplayColor();
+            this.DisplayAllColors();
         }
 
         private void hScrollBarGreen_Scroll(object sender, ScrollEventArgs e)
@@ -47,8 +45,7 @@ namespace ProjectScrollBar
             this.numericUpDownGreen.Value = (decimal)this.hScrollBarGreen.Value;
 
             this.StoreColor();
-            this.DisplayGreen();
-            this.DisplayColor();
+            this.DisplayAllColors();
         }
 
         private void numericUpDownGreen_ValueChanged(object sender, EventArgs e)
@@ -56,8 +53,7 @@ namespace ProjectScrollBar
             this.hScrollBarGreen.Value = (int)this.numericUpDownGreen.Value;
 
             this.StoreColor();
-            this.DisplayGreen();
-            this.DisplayColor();
+            this.DisplayAllColors();
         }
 
         private void hScrollBarBlue_Scroll(object sender, ScrollEventArgs e)
@@ -65,8 +61,7 @@ namespace ProjectScrollBar
             this.numericUpDownBlue.Value = (decimal)this.hScrollBarBlue.Value;
 
             this.StoreColor();
-            this.DisplayBlue();
-            this.DisplayColor();
+            this.DisplayAllColors();
         }
 
         private void numericUpDownBlue_ValueChanged(object sender, EventArgs e)
@@ -74,8 +69,7 @@ namespace ProjectScrollBar
             this.hScrollBarBlue.Value = (int)this.numericUpDownBlue.Value;
 
             this.StoreColor();
-            this.DisplayBlue();
-            this.DisplayColor();
+            this.DisplayAllColors();
         }
 
         // Methods
@@ -110,7 +104,7 @@ namespace ProjectScrollBar
             this.panelBlue.BackColor = Color.FromArgb(0, 0, blueAmount);
         }
 
-        private void DisplayColor()
+        private void DisplayColorPanel()
         {
             this.panelColor.BackColor = this.color;
         }
@@ -120,7 +114,7 @@ namespace ProjectScrollBar
             this.DisplayRed();
             this.DisplayGreen();
             this.DisplayBlue();
-            this.DisplayColor();
+            this.DisplayColorPanel();
         }
     }
 }

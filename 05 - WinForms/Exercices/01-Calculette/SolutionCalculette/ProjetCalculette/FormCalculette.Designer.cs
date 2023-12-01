@@ -209,7 +209,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormCalculette";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormCalculette";
+            Text = "Calculette";
             Load += FormCalculette_Load_1;
             ResumeLayout(false);
             PerformLayout();
