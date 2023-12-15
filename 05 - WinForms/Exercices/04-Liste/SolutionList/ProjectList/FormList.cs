@@ -12,13 +12,19 @@ namespace ProjectList
 {
     public partial class FormList : Form
     {
+        static private int instanciationCount = 0;
+
         private List<string> list;
 
         public FormList()
         {
             InitializeComponent();
             this.list = new List<String> { };
+
+            FormList.instanciationCount++;
         }
+
+        static public int InstanciationCount { get { return FormList.instanciationCount; } }
 
         private void buttonAddToList_Click(object sender, EventArgs e)
         {

@@ -13,6 +13,8 @@ namespace ProjectScrollBar
 {
     public partial class FormScrollBar : Form
     {
+        static private int instanciationCount = 0;
+
         private Color color;
 
         public FormScrollBar()
@@ -20,7 +22,11 @@ namespace ProjectScrollBar
             InitializeComponent();
             this.StoreColor();
             this.DisplayAllColors();
+
+            FormScrollBar.instanciationCount++;
         }
+
+        static public int InstanciationCount { get { return FormScrollBar.instanciationCount; } }
 
         // Events
 

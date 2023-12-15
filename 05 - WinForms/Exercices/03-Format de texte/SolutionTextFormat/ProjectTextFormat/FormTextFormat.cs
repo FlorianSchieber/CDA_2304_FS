@@ -12,10 +12,16 @@ namespace ProjectTextFormat
 {
     public partial class FormTextFormat : Form
     {
+
+        static private int instanciationCount = 0;
+
         public FormTextFormat()
         {
             InitializeComponent();
+            FormTextFormat.instanciationCount++;
         }
+
+        static public int InstanciationCount { get { return FormTextFormat.instanciationCount; } }
 
         private void textBox_TextChanged(object sender, EventArgs e)
         {

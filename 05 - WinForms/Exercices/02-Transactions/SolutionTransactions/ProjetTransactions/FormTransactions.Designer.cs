@@ -201,7 +201,6 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximumSize = new Size(424, 282);
             Name = "FormTransactions";
-            StartPosition = FormStartPosition.CenterScreen;
             Text = "Transactions";
             FormClosing += FormTransactions_FormClosing;
             Load += FormTransactions_Load;

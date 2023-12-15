@@ -271,6 +271,7 @@
             Controls.Add(labelLoanBalance);
             Controls.Add(textBoxName);
             Controls.Add(labelName);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormRepayment";
             Text = "Prêt";
             FormClosing += FormRepayment_FormClosing;

@@ -15,12 +15,16 @@ namespace ProjetTransactions
 {
     public partial class FormTransactions : Form
     {
+        static private int instanciationCount = 0;
+
         private Transaction currentTransaction;
 
         public FormTransactions()
         {
             InitializeComponent();
             this.currentTransaction = null;
+
+            FormTransactions.instanciationCount++;
         }
 
         public FormTransactions(Transaction _currentTransaction)
@@ -31,8 +35,11 @@ namespace ProjetTransactions
             this.textBoxDate.Text = Verifier.DateToString(this.currentTransaction.Date);
             this.textBoxAmount.Text = Verifier.AmountToString(this.currentTransaction.Amount);
             this.textBoxZipcode.Text = this.currentTransaction.Zipcode;
+
+            FormTransactions.instanciationCount++;
         }
 
+        static public int InstanciationCount { get { return FormTransactions.instanciationCount; } }
         public Transaction CurrentTransaction { get => this.currentTransaction; }
 
         private void FormTransactions_Load(object sender, EventArgs e)

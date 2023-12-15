@@ -13,6 +13,8 @@ namespace ProjectCombo
 {
     public partial class FormCombo : Form
     {
+        static private int instanciationCount = 0;
+
         private Dictionary<string, bool> checkedCountries;
 
         public FormCombo(Dictionary<string, bool> _checkedCountries)
@@ -33,6 +35,8 @@ namespace ProjectCombo
             }
 
             this.ActualiseButtons();
+
+            FormCombo.instanciationCount++;
         }
 
         public FormCombo()
@@ -40,7 +44,11 @@ namespace ProjectCombo
             InitializeComponent();
             this.checkedCountries = new Dictionary<string, bool> { };
             this.ActualiseButtons();
+
+            FormCombo.instanciationCount++;
         }
+
+        static public int InstanciationCount { get { return FormCombo.instanciationCount; } }
 
         public Dictionary<string, bool> CheckedCountries { get { return this.checkedCountries; } }
 

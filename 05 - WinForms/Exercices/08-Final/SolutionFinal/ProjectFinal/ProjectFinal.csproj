@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\01-Calculette\SolutionCalculette\ProjetCalculette\ProjetCalculette.csproj" />
+    <ProjectReference Include="..\..\..\02-Transactions\SolutionTransactions\ProjetTransactions\ProjetTransactions.csproj" />
+    <ProjectReference Include="..\..\..\03-Format de texte\SolutionTextFormat\ProjectTextFormat\ProjectTextFormat.csproj" />
+    <ProjectReference Include="..\..\..\04-Liste\SolutionList\ProjectList\ProjectList.csproj" />
+    <ProjectReference Include="..\..\..\05-Combo\SolutionCombo\ProjectCombo\ProjectCombo.csproj" />
+    <ProjectReference Include="..\..\..\06-Défilement\SolutionScrollBar\ProjectScrollBar\ProjectScrollBar.csproj" />
+    <ProjectReference Include="..\..\..\07-Remboursement\SolutiontRepayment\ProjectRepayment\ProjectRepayment.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

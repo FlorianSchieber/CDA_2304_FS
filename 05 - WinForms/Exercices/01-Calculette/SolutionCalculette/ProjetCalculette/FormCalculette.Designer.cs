@@ -208,7 +208,6 @@
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormCalculette";
-            StartPosition = FormStartPosition.CenterScreen;
             Text = "Calculette";
             Load += FormCalculette_Load_1;
             ResumeLayout(false);

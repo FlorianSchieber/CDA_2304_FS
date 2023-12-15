@@ -8,8 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CL_Transaction\CL_Transaction.csproj" />
-    <ProjectReference Include="..\CL_Verifier\CL_Verifier.csproj" />
+    <ProjectReference Include="..\CL_Production\CL_Production.csproj" />
   </ItemGroup>
 
 </Project>

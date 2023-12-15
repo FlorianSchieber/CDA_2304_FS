@@ -14,6 +14,8 @@ namespace ProjectRepayment
 {
     public partial class FormRepayment : Form
     {
+        private static int instanciationCount = 0;
+
         private static Dictionary<string, Compound> compoundLinks = new Dictionary<string, Compound>
         {
             { "Mensuelle", Compound.Monthly },
@@ -37,6 +39,8 @@ namespace ProjectRepayment
             this.save = false;
             this.GenerateComboBoxCompoundItems();
             this.RefreshFromInternalRepayment();
+
+            FormRepayment.instanciationCount++;
         }
 
         public FormRepayment(Repayment _repayment)
@@ -47,10 +51,13 @@ namespace ProjectRepayment
             this.save = false;
             this.GenerateComboBoxCompoundItems();
             this.RefreshFromInternalRepayment();
+
+            FormRepayment.instanciationCount++;
         }
 
         // Getters
 
+        static public int InstanciationCount { get { return FormRepayment.instanciationCount; } }
         public Repayment InoutRepayment { get { return this.inoutRepayment; } }
         public Repayment InternalRepayment { get { return this.internalRepayment; } }
 
@@ -150,7 +157,7 @@ namespace ProjectRepayment
 
         public string RepaymentValueToString(double _repaymentValue)
         {
-            return _repaymentValue.ToString("#.##");
+            return _repaymentValue.ToString("0.00") + " €";
         }
 
         // Verifiers
@@ -264,7 +271,7 @@ namespace ProjectRepayment
             {
                 MessageBox.Show("Le formulaire n'est pas valide", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -278,7 +285,7 @@ namespace ProjectRepayment
             {
                 this.inoutRepayment = this.internalRepayment;
             }
-            
+
         }
     }
 }

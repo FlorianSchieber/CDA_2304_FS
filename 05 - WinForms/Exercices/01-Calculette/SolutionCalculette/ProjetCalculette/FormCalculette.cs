@@ -12,6 +12,8 @@ namespace ProjetCalculette
 {
     public partial class FormCalculette : Form
     {
+        static private int instanciationCount = 0;
+
         private int sum;
         private bool newlLine;
 
@@ -20,7 +22,11 @@ namespace ProjetCalculette
             InitializeComponent();
             this.sum = 0;
             this.newlLine = true;
+
+            FormCalculette.instanciationCount++;
         }
+
+        static public int InstanciationCount { get { return FormCalculette.instanciationCount; } }
 
         private void FormCalculette_Load(object sender, EventArgs e)
         {
