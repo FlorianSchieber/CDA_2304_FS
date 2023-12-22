@@ -13,6 +13,11 @@ namespace ProjectToutembal
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
 
+            ApplicationConfiguration.Initialize();
+
+            FormProductionInput formProductionInput = new FormProductionInput();
+            Application.Run(formProductionInput);
+
             Production[] productions =
             {
                 new Production("Production A", "A", 100, 1000, 0.01),
@@ -20,7 +25,7 @@ namespace ProjectToutembal
                 new Production("Production C", "C", 1200, 10000, 0.05)
             };
 
-            ApplicationConfiguration.Initialize();
+            
             Application.Run(new FormProductionManager(productions));
         }
     }
