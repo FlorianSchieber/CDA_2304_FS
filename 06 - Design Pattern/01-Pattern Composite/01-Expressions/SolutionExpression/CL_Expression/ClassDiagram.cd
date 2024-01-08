@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="CL_Expression.BinaryOperator">
+    <Position X="7.25" Y="2.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAIAAAAAAA=</HashCode>
+      <FileName>BinaryOperator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CL_Expression.Number">
+    <Position X="2.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAgAAAAAEACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Number.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CL_Expression.Addition">
+    <Position X="2.5" Y="5.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Addition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CL_Expression.Substraction">
+    <Position X="8.25" Y="5.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Substraction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CL_Expression.Expression">
+    <Position X="5.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
