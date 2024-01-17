@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CL_GeometricShape
 {
-    public class GeometricShape : Shape
+    public abstract class GeometricShape : Shape
     {
         public GeometricShape() : base() { }
 

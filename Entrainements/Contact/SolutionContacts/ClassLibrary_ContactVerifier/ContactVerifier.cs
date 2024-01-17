@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary_ContactVerifier
 {
-    static class ContactVerifier
+    public static class ContactVerifier
     {
-        static string FIRST_NAME_REGEX = @"^[A-Z][a-z]*(\-[A-Z][a-z])?$";
-        static string LAST_NAME_REGEX = @"^[A-Z][a-z]*$";
-        static string ZIPCODE_REGEX = @"^[0-9]$";
-        static string PHONE_NUMBER_REGEX = @"^([0-9]*(\.|\s|\.\s)?)*$";
-        static string EMAIL_REGEX = @"^[a-z0-9\.]*\@[a-z]*\.[a-z]{2,4}$";
+        public static readonly string FIRST_NAME_REGEX = @"^[A-Z][a-z]*(\-[A-Z][a-z])?$";
+        public static readonly string LAST_NAME_REGEX = @"^([A-Z][a-z]*)*$";
+        public static readonly string ZIPCODE_REGEX = @"^[0-9]*$";
+        public static readonly string PHONE_NUMBER_REGEX = @"^([0-9]*(\.|\s|\.\s))*[0-9]*$";
+        public static readonly string EMAIL_REGEX = @"^[a-z0-9\.]*\@[a-z]*\.[a-z]{2,4}$";
 
-        static int FIRST_NAME_MAX_LENGTH = 30;
-        static int LAST_NAME_MAX_LENGTH = 30;
-        static int ZIP_CODE_LENGTH = 5;
+        public static readonly int FIRST_NAME_MAX_LENGTH = 30;
+        public static readonly int LAST_NAME_MAX_LENGTH = 50;
+        public static readonly int ZIP_CODE_LENGTH = 5;
 
         public static bool IsNotVoid(string stringToVerify)
         {
@@ -65,23 +65,45 @@ namespace ClassLibrary_ContactVerifier
         {
             DateTime dateTime;
 
-            return (DateTime.TryParseExact(
+            return DateTime.TryParseExact(
                 birthDateString,
                 new string[] { ContactConverter.DATE_TIME_FORMAT },
                 null,
                 System.Globalization.DateTimeStyles.None,
                 out dateTime
-            ));
+            );
         }
 
-        public static bool IsMajorBirthDate(DateTime dateTime)
+        public static bool IsMajorBirthDate(DateTime birthDate)
         {
-            return dateTime.AddYears(18) <= DateTime.Today;
+            return birthDate.AddYears(18) <= DateTime.Today;
+        }
+
+        public static bool IsValidBirthDate(DateTime birthDate)
+        {
+            return IsMajorBirthDate(birthDate);
+        }
+
+        public static bool IsValidBirthDate(string birthDateString)
+        {
+            if (IsFormattedBirthDate(birthDateString))
+            {
+                DateTime birthDate = ContactConverter.StringToDate(birthDateString);
+                return IsValidBirthDate(birthDate);
+            }
+
+            return false;
         }
         #endregion BirthDate
 
-        #region ZipCode
+        #region Address
+        public static bool IsValidAddress(string address)
+        {
+            return IsNotVoid(address);
+        }
+        #endregion Address
 
+        #region ZipCode
         public static bool IsFormattedZipCode(string zipCode)
         {
             Regex regex = new Regex(ZIPCODE_REGEX);
@@ -95,7 +117,7 @@ namespace ClassLibrary_ContactVerifier
 
         public static bool IsValidZipCode(string zipCode)
         {
-            return IsFormattedZipCode(zipCode) && IsGoodLengthZipCode(zipCode);
+            return IsNotVoid(zipCode) && IsFormattedZipCode(zipCode) && IsGoodLengthZipCode(zipCode);
         }
         #endregion ZipCode
 

@@ -31,5 +31,13 @@ namespace CL_GeometricShape
         {
             this.childShapes.Remove(shapeToRemove);
         }
+        public override void Accept(IVisitor visitor)
+        {
+            visitor.Visit(this);
+            foreach (Shape shape in this.childShapes)
+            {
+                shape.Accept(visitor);
+            }
+        }
     }
 }

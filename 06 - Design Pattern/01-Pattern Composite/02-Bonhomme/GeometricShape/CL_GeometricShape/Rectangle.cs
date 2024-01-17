@@ -8,19 +8,28 @@ namespace CL_GeometricShape
 {
     public class Rectangle : GeometricShape
     {
-        private double height;
         private double width;
+        private double height;
+        
 
         public Rectangle() : base()
         {
-            this.height = 0;
             this.width = 0;
+            this.height = 0;
+        }
+        
+        public Rectangle(Coordinates coordinates, double width, double height) : base(coordinates)
+        {
+            this.width = width;
+            this.height = height;
         }
 
-        public Rectangle(Coordinates coordinates, double height, double width) : base(coordinates)
+        public double Width { get { return this.width; } }
+        public double Height { get { return this.height; } }
+
+        public override void Accept(IVisitor visitor)
         {
-            this.height = height;
-            this.width = width;
+            visitor.Visit(this);
         }
     }
 }

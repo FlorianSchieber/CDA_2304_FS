@@ -15,7 +15,7 @@ namespace ClassLibrary_ContactVerifier
             return dateTimeToConvert.ToString(DATE_TIME_FORMAT);
         }
 
-        public static DateTime stringToDate(string stringToConvert)
+        public static DateTime StringToDate(string stringToConvert)
         {
             DateTime dateTime;
 

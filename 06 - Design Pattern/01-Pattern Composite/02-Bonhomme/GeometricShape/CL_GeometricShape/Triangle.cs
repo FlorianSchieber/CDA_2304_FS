@@ -19,5 +19,10 @@ namespace CL_GeometricShape
         {
             this.secondCoordinates = new Coordinates[2] { coordinates2 - coordinates1, coordinates3 - coordinates1 };
         }
+
+        public override void Accept(IVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
     }
 }

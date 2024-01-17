@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibrary_ContactVerifier;
 
 namespace ClassLibrary_Contacts
 {
@@ -22,7 +23,27 @@ namespace ClassLibrary_Contacts
 
         public Contact(string firstName, string lastName, DateTime birthDate, string address, string zipCode, string phoneNumber, string email)
         {
-
+            if(
+                ContactVerifier.IsValidFirstName(firstName) &&
+                ContactVerifier.IsValidLastName(lastName) &&
+                ContactVerifier.IsValidBirthDate(birthDate) &&
+                ContactVerifier.IsValidZipCode(zipCode) &&
+                ContactVerifier.IsValidPhoneNumber(phoneNumber) &&
+                ContactVerifier.IsValidEmail(email)
+            )
+            {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.birthDate = birthDate;
+                this.address = address;
+                this.zipCode = zipCode;
+                this.phoneNumber = phoneNumber;
+                this.email = email;
+            }
+            else
+            {
+                throw new Exception("Invalid Contact");
+            }
         }
 
         // Getters
@@ -32,8 +53,8 @@ namespace ClassLibrary_Contacts
         public DateTime BirthDate { get => this.birthDate; }
         public string Address { get => this.address; }
         public string ZipCode { get => this.zipCode; }
-        private string PhoneNumber { get => this.phoneNumber; }
-        private string Email { get => this.email; }
+        public string PhoneNumber { get => this.phoneNumber; }
+        public string Email { get => this.email; }
 
         
     }

@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="CL_GeometricShape.Coordinates">
-    <Position X="1.75" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="0.5" Width="4" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEQAEAAAAAAAAAAAAAAABgAAAAYAA=</HashCode>
       <FileName>Coordinates.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CL_GeometricShape.Shape">
-    <Position X="4.75" Y="0.5" Width="3.25" />
+    <Position X="6.25" Y="0.5" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAgAAAAIAAIQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AIAAAAAAAIAAAAAAAAAgAAAAIAAIQAAAAAAAAAAAAAA=</HashCode>
       <FileName>Shape.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -18,16 +18,16 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="CL_GeometricShape.Group">
-    <Position X="7.75" Y="3.25" Width="2.75" />
+    <Position X="11.25" Y="3.75" Width="2.75" />
     <AssociationLine Name="childShapes" Type="CL_GeometricShape.Shape" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="9.927" Y="3.25" />
-        <Point X="9.927" Y="1.662" />
-        <Point X="8" Y="1.662" />
+        <Point X="13.427" Y="3.75" />
+        <Point X="13.427" Y="1.662" />
+        <Point X="10" Y="1.662" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AEIAAABAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AMIAAABAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Group.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -35,18 +35,39 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="CL_GeometricShape.Triangle">
-    <Position X="1.75" Y="6.25" Width="3.5" />
+    <Position X="0.5" Y="6.75" Width="5.75" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AIBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Triangle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CL_GeometricShape.GeometricShape">
-    <Position X="1.75" Y="4.25" Width="3.5" />
+    <Position X="4.5" Y="4.25" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GeometricShape.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="CL_GeometricShape.Rectangle">
+    <Position X="6.5" Y="6.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Rectangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CL_GeometricShape.Circle">
+    <Position X="11" Y="6.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Circle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="CL_GeometricShape.IVisitor">
+    <Position X="14.75" Y="1.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IVisitor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

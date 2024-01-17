@@ -58,5 +58,7 @@ namespace CL_GeometricShape
 
             return null;
         }
+
+        public abstract void Accept(IVisitor visitor);
     }
 }

@@ -1,3 +1,5 @@
+using ClassLibrary_Contacts;
+
 namespace WinFormsContacts
 {
     internal static class Program
@@ -11,7 +13,16 @@ namespace WinFormsContacts
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormContact());
+
+            FormContact formContactCreation = new FormContact();
+
+            Application.Run(formContactCreation);
+
+            Contact contact = formContactCreation.StoredContact;
+
+            FormContact formContactEdition = new FormContact(contact);
+
+            Application.Run(formContactEdition);
         }
     }
 }

@@ -48,15 +48,7 @@ namespace CL_GeometricShape
 
         public override string ToString()
         {
-            if (this is not null)
-            {
-                return "(" + this.x.ToString() + ", " +  this.y.ToString() +")";
-            }
-            else
-            {
-                return "No coordinates";
-            }
-            
+            return "(" + this.x.ToString() + ", " +  this.y.ToString() +")"; 
         }
     }
 }
