@@ -11,32 +11,32 @@ namespace CL_Robot
     {
 
         private Robot robotReceveur;
-        private Invoqueur invoqueur;
+        private Invocateur invocateur;
 
         public Telecommande(Robot robotReceveur)
         {
             this.robotReceveur = robotReceveur;
-            this.invoqueur = new Invoqueur(robotReceveur);
+            this.invocateur = new Invocateur(robotReceveur);
         }
 
         public void BoutonAllumer()
         {
-            this.invoqueur.Executer(new CommandeAllumer(this.robotReceveur));
+            this.invocateur.Executer(new CommandeAllumer(this.robotReceveur));
         }
 
         public void BoutonEteindre()
         {
-            this.invoqueur.Executer(new CommandeEteindre(this.robotReceveur));
+            this.invocateur.Executer(new CommandeEteindre(this.robotReceveur));
         }
 
         public void BoutonAvancer(double distance)
         {
-            this.invoqueur.Executer(new CommandeAvancer(this.robotReceveur, distance));
+            this.invocateur.Executer(new CommandeAvancer(this.robotReceveur, distance));
         }
 
         public void BoutonTourner(double angleEnRadians)
         {
-            this.invoqueur.Executer(new CommandeTourner(this.robotReceveur, angleEnRadians));
+            this.invocateur.Executer(new CommandeTourner(this.robotReceveur, angleEnRadians));
 
         }
     }

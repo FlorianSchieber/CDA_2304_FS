@@ -1,18 +1,18 @@
-﻿using System;
+﻿using CL_Robot.CommandesRobot;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CL_Robot.CommandesRobot;
 
 namespace CL_Robot
 {
-    public class Invoqueur
+    public class Invocateur
     {
         private Robot robotReceveur;
         private List<ICommande> historiqueCommandes;
 
-        public Invoqueur(Robot robotReceveur)
+        public Invocateur(Robot robotReceveur)
         {
             this.robotReceveur = robotReceveur;
             this.historiqueCommandes = new List<ICommande> { };
@@ -30,6 +30,5 @@ namespace CL_Robot
             commande.Annuler();
             this.historiqueCommandes.Remove(commande);
         }
-
     }
 }
