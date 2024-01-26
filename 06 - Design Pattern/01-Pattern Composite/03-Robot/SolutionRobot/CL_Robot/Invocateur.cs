@@ -9,12 +9,10 @@ namespace CL_Robot
 {
     public class Invocateur
     {
-        private Robot robotReceveur;
         private List<ICommande> historiqueCommandes;
 
-        public Invocateur(Robot robotReceveur)
+        public Invocateur()
         {
-            this.robotReceveur = robotReceveur;
             this.historiqueCommandes = new List<ICommande> { };
         }
 

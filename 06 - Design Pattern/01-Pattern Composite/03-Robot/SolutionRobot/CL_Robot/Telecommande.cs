@@ -16,7 +16,7 @@ namespace CL_Robot
         public Telecommande(Robot robotReceveur)
         {
             this.robotReceveur = robotReceveur;
-            this.invocateur = new Invocateur(robotReceveur);
+            this.invocateur = new Invocateur();
         }
 
         public void BoutonAllumer()
