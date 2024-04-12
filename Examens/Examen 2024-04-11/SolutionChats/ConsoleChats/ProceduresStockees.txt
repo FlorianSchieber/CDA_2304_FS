@@ -1,0 +1,23 @@
+﻿DROP PROCEDURE InsererChat;
+
+CREATE PROCEDURE InsererChat (@Numero_Puce BIGINT, @Nom VARCHAR(25), @Age INT, @Race INTEGER) AS
+BEGIN
+INSERT INTO CHATS(Numero_Puce, Nom, Age, Race) VALUES
+	(@Numero_Puce, @Nom, @Age, @Race);
+END;
+
+DROP PROCEDURE ModifierChat;
+
+CREATE PROCEDURE ModifierChat (@Numero_Puce BIGINT, @Nom VARCHAR(25), @Age INT, @Race INTEGER) AS
+BEGIN
+UPDATE CHATS SET Nom=@Nom, Age=@Age, Race=@Race
+	WHERE Numero_Puce=@Numero_Puce;
+END;
+
+DROP ChatExiste;
+
+CREATE PROCEDURE ChatExiste (@Numero_Puce BIGINT) AS
+BEGIN
+SELECT * FROM CHATS
+	WHERE Numero_Puce=@Numero_Puce;
+END;
